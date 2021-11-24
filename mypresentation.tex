@@ -6,6 +6,7 @@
 
 %\dualscreen
 
+\newcommand{\angl}[1]{{\color{gray}(\emph{angl.:} #1)}}
 
 
 \title[Riadiace Algoritmy Dronov]
@@ -21,21 +22,146 @@
 \begin{document}
 \titleslide[]{SK}{STU}
 
-\input{Pocitace}
+
+%viem si predstavit klasika kaskadne riadenie ala arducopter
+%%potom mozno LQR a Integral backstepping a vysvetlit co ma aku vyhodu ...
+
+%\begin{frame}[fragile]{Test tikz}
+%
+%
+%    \begin{figure}[ht]
+%        \begin{center}
+%            \begin{tikzpicture}[auto, node distance=1cm,>=latex']
+%            \node [input, name=input] {};
+%            \node [sum, right=of input] (sum) {};
+%            \node [block, right=of sum] (controller) {$C(s)$};
+%            \node [block, right=2 of controller] (plant) {$G(s)$};
+%            \node [output, right=of plant] (output) {};
+%
+%            \draw [draw,->] (input) -- node {$U(s)$} (sum);
+%            \draw [->] (sum) -- node {} (controller);
+%            \draw [->] (controller) -- node {} (plant);
+%            \draw [->] (plant) -- node [name=y] {$Y(s)$}(output);
+%            \draw [->] (y) -- ++ (0,-2) -| node [pos=0.99] {$-$} (sum);
+%            \end{tikzpicture}
+%        \end{center}
+%    \end{figure}
+
+%\end{frame}
+
+%\input{Pocitace}
+
+
+\begin{frame}{Opakovanie: Riadená sústava}
+  \begin{itemize}
+    \item<1-> Riadená sústava alebo systém \angl{plant, system}, napr. motory drona
+    \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM do motorov
+    \item<3-> Výstup $y(t)$ \angl{output} je meraná, tzv. manipulovaná veličina \angl{manipulated variable}; napr. klopenie $\theta(t)$ drona
+    \item<4-> Porucha \angl{disturbance} $w(t)$ je vplyv vonkajšieho prostredia, napr. vietor
+  \end{itemize}
+
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{loop_1}\\
+\end{figure}
+\end{frame}
+
+\begin{frame}{Opakovanie: Meranie}
+  \begin{itemize}
+    \item<1-> Výstupy $y(t)$ sú idealizované
+    \item<2-> Poruchy, teda šum merania $v(t)$ a dynamika snímača vplýva na výsledok
+    \item<3-> Merania môžeme korigovať, resp. nemerané veličiny odhadnúť $\hat{y}(t)$
+    \item<4-> Pre jednoduchosť často predpokladáme ideálne meranie ${y}(t)=\hat{y}(t)$
+  \end{itemize}
+
+\begin{onlyenv}<1-3>
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{loop_2}\\
+\end{figure}
+\end{onlyenv}
+
+
+\begin{onlyenv}<4>
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{loop_2b}\\
+\end{figure}
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}{Opakovanie: Riadiacia odchýlka}
+  \begin{itemize}
+    \item<1-> Žiadaná hodnota alebo referencia \angl{setpoint, reference} $r(t)$ vyjadruje na akú hodnotu chceme dostať výstup, potom
+    \item<2-> Rozdiel medzi žiadanou hodnotou a výstupom $e(t)=r(t)-y(t)$ je odchýlka riadenia \angl{error}
+  \end{itemize}
+
+\begin{figure}
+\centering
+  \includegraphics[width=100mm]{loop_ref}\\
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[t]{Opakovanie: Riadiaci algoritmus}
+  \begin{itemize}
+    \item<1-> Riadenie je logika ktorá prepočíta odchýlku riadenia $e(t)$ na vstupy $u(t)$
+    \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. parné stroje)
+    \item<3-> Dobrým kompromisom medzi komplexnosťou (pochopenie, návrh) a implementovateľnosťou je PID riadenie
+    \item<4-> Asi 95\% riadiacich algoritmov v praxi sú PID...
+    \item<5-> ...a väčšina z nich sú slabo naladené. 
+  \end{itemize}
+
+\begin{onlyenv}<1-3>
+\begin{figure}
+\centering
+  \includegraphics[width=100mm]{loop_all}\\
+\end{figure}
+\end{onlyenv}
+
+
+\begin{onlyenv}<3->
+\begin{figure}
+\centering
+  \includegraphics[width=100mm]{loop_PID}\\
+\end{figure}
+\end{onlyenv}
+\end{frame}
+
+
+
+
+
+%\begin{frame}{Opakovanie: Riadená sústava}
+%  \begin{itemize}
+%    \item<1-> blah
+%    \item<2-> blah blah
+%  \end{itemize}
+
+%%\begin{onlyenv}<1>
+%\begin{figure}
+%\centering
+%  \includegraphics[width=\textwidth]{loop_full}\\
+%\end{figure}
+%%\end{onlyenv}
+%\end{frame}
+%
+\begin{frame}{Opakovanie: Riadená sústava}
+
+
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{rollpitch}\\
+\end{figure}
+\end{frame}
+
 
 
 \thankyouslide{gergely.takacs@stuba.sk}{SK}
 \referencesslidebiber{SK}
 
 %\backupbegin
-%\input{Zakon}
-%\input{Odbor}
-%\input{Kriteria}
-%\input{HeatID}
-%\input{ClankyCCC}
-%\input{Clanky}
-%\input{Contributors}
-%\input{Spoluautori}
+%\input{...
 %\backupend
 
 
