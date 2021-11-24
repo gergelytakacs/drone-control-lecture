@@ -1,0 +1,592 @@
+% Green citations OR footnote citations. Biber???
+% Two screens beamer
+\usepackage{textpos} % package for the positioning
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{xstring}
+\usepackage{xparse}
+
+\usepackage[gen]{eurosym}
+
+\newcommand{\dualscreen}{
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen}
+\setbeamertemplate{note page}{\pagecolor{yellow!10}{\LARGE \insertnote}}
+}
+
+\newcommand{\noteline}{
+{\\ \null \medskip}
+}
+
+
+\mode<presentation>
+{
+  \usetheme{Boadilla}
+  \setbeamercovered{transparent}  % or whatever (possibly just delete it)
+}
+
+\usepackage{color}
+\definecolor{arduteal}{RGB}{23, 161, 165}
+\definecolor{uamai}{RGB}{26, 92, 153}   % Green shade for UAMAI, SjF, STU in Bratislava
+
+\setbeamercolor{title}{fg=white,bg=uamai}% This is for the title (w/box)
+\setbeamercolor{footnote mark}{fg=uamai} % Color of footnote marks (numbering) in beamer. Pretty darn hard to find.
+
+% Overpic
+\usepackage[percent]{overpic} % Writing over pics
+ \usepackage[skins]{tcolorbox} % Nice color boxes
+
+\newcommand{\tbox}[1]{\tcbox[enhanced,size=fbox,fontupper=\footnotesize,colback=white!100,drop fuzzy shadow southeast, sharp corners]{#1}}
+
+
+\makeatletter
+\newcommand{\slidefooter}[2]{
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+
+  \IfEqCase{#1}{
+    {EN}{
+      \IfEqCase{#2}{
+        {STU}{
+      \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west,yshift=-0.7mm,xshift=-0.2mm] at (current page.south west) {\includegraphics[height=2.5mm]{footer_EN_STU}};
+      \end{tikzpicture}}
+          {SjF}{
+      \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west,yshift=-0.5mm,xshift=-0.2mm] at (current page.south west) {\includegraphics[height=2mm]{footer_EN_SjF}};
+      \end{tikzpicture}}
+      }
+    }
+    {SK}{
+      \IfEqCase{#2}{
+        {STU}{
+      \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west,yshift=-0.7mm,xshift=-0.2mm] at (current page.south west) {\includegraphics[height=2.5mm]{footer_SK_STU}};
+      \end{tikzpicture}}
+          {SjF}{
+      \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west,yshift=-0.5mm,xshift=-0.2mm] at (current page.south west) {\includegraphics[height=2.0mm]{footer_SK_SjF}};
+      \end{tikzpicture}}
+      }
+    }
+  }
+
+  \vskip0pt%
+}
+}
+\makeatother
+
+
+
+\setbeamercolor{toptitlecolor}{fg=white,bg=uamai}
+\makeatletter
+\setbeamertemplate{frametitle}
+{\vskip-3pt
+  \leavevmode
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.7ex,dp=1.2ex]{toptitlecolor}%
+    \raggedright\hspace*{0.4em}\large\insertframetitle
+  \end{beamercolorbox}
+  }%
+}
+\makeatother
+
+\setbeamercolor{very important text}{fg=white,bg=uamai}
+\newcommand{\veryimportant}[1]{{%
+  \usebeamercolor{very important text}\colorbox{bg}{\textcolor{black}{#1}}%
+}}
+
+\newcommand{\important}[1]{\ignorespaces\textcolor{uamai}{#1}}
+
+\setbeamercolor{alerted text}{fg=uamai}
+
+\newcommand{\slideheader}[1]{
+
+  \IfEqCase{#1}{
+    {EN}{
+    \addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east,yshift=7.9mm,xshift=4.5mm] at (current page.north east) {\includegraphics[height=2cm]{uamai}};
+    \end{tikzpicture}}
+    }
+    {SK}{
+    \addtobeamertemplate{frametitle}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north east,yshift=-0mm,xshift=0mm] at (current page.north east) {\includegraphics[height=5mm]{urkLogoWhite}};
+    \end{tikzpicture}}
+    }
+  }
+}
+
+\makeatletter
+\definecolor{beamer@blendedblue}{RGB}{26, 92, 153}
+\makeatother
+
+\definecolor{UAMAIgreen}{RGB}{26, 92, 153}
+
+ \usepackage{graphicx}
+\graphicspath{{./figs/}}
+\usepackage{epstopdf} %Converts EPS to PDF so PDFLaTeX can be used
+\newcommand{\figone}[0] {1.000\textwidth} %Multiplier for all single full width images
+\newcommand{\figtwo}[0] {0.48\textwidth} %Multiplier for all double half width images
+\newcommand{\figthree}[0] {0.321\textwidth} %Multiplier for all triple third width images
+\newcommand{\figtwoh}[0] {0.3\textheight} %Multiplier for all double half width
+
+
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{epsfig}
+\usepackage{mathrsfs} %mathscr
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{courier} % To get courier fonts in listings
+\usepackage{listings}
+\lstset{basicstyle=\normalsize\ttfamily,breaklines=true,numbers=left,xleftmargin=2em,frame=single,framexleftmargin=1.5em}
+
+\lstdefinelanguage{Arduino}[]{C++}      %Defining Arduino
+{morekeywords={setup,loop,function,pgm_read_float,pgm_read_word,PROGMEM,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,analogReadResolution,analogWriteResolution,tone,noTone,shiftOut,shiftIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,isAlphaNumeric,isAlpha,isAscii,isWhitespace,isControl,isDigit,isGraph,isLowerCase,isPrintable,isPunct,isSpace,isUpperCase,iisHexadecimalDigit,randomSeed,random,lowByte,highByte,bitRead,bitWrite,
+bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts,Serial,Stream,Keyboard,Mouse},
+sensitive=true,
+alsoletter={_}
+}
+
+\lstdefinelanguage{myArduino}[]{Arduino}      %Defining my own Arduino
+{morekeywords={OptoShield,HeatShield,begin,calibration,sensorRead,actuatorWrite,referenceRead,compute,PIDAbs,step},
+sensitive=true,
+alsoletter={_},
+numbers=left,
+xleftmargin=2em,
+xrightmargin=0.2em,
+frame=single,
+framexleftmargin=1.5em
+}
+
+%Extended Matlab language
+\lstdefinelanguage{myMatlab}[]{Matlab}      {morekeywords={ectrl.exportToC,cost,LTISystem,QuadFunction,MPCController,toExplicit,partition,feedback,fplot,function,arduino,writeDigitalPin,textscan,fminsearch,dlqr,predmodelqp,dlyap,ones,linprog,quadprog,optimset,qpOASES,qpOASES_sequence,sysStruct,probStruct,mpt_control,volume,hull,extreme,mpt_exportc,mpt_getInput,sdpvar,blkdiag,sdpsettings,solvesdp,geomean,double,},
+sensitive=true,
+alsoletter={_}
+numbers=left,
+xleftmargin=2em,
+frame=single,
+framexleftmargin=1.5em
+}
+
+\lstdefinelanguage{myPython}[]{Python}
+{morekeywords={},
+sensitive=true,
+alsoletter={_}
+numbers=left,
+xleftmargin=2em,
+frame=single,
+framexleftmargin=1.5em}
+
+\lstdefinelanguage{myBash}[]{bash}
+{morekeywords={},
+sensitive=true,
+alsoletter={_}
+numbers=left,
+xleftmargin=2em,
+frame=single,
+framexleftmargin=1.5em}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=myArduino,
+  showstringspaces=false,
+  basicstyle=\normalsize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{custompython}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=myPython,
+  showstringspaces=false,
+  basicstyle=\normalsize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{custommatlab}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  xleftmargin=\parindent,
+  language=myMatlab,
+  showstringspaces=false,
+  basicstyle=\normalsize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+ }
+
+
+\lstnewenvironment{arduino}[1]{
+\lstset{
+language=myArduino,
+caption=#1,
+label=#1,
+style=customc}
+}
+{
+}
+
+%Plain with no numbering
+\lstnewenvironment{ardu}{
+\lstset{
+language=myArduino,
+style=customc}
+}
+{
+}
+
+\lstnewenvironment{matlab}[1]{
+\lstset{
+language=myMatlab,
+caption=#1,
+label=#1,
+style=custommatlab}
+}
+{
+}
+
+\lstnewenvironment{mtlb}{
+\lstset{
+language=myMatlab,
+style=custommatlab}
+}
+{
+}
+
+%----------------------------------------------------
+\newcommand{\muaompc}{$\mu${AO-MPC}}
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathrm{#1}}} %Bold vectors instead of arrows
+
+%This custom command defines how the literal menus look like.
+\newcommand{\gui}[1]{{\emph{#1}}} %Gui commands, icon names, buttons
+
+% All code, functions, variables are typed like this
+\newcommand{\code}[1]{{\lstinline[columns=fixed]{#1}}} %Shorthand for code
+
+
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+
+
+% REFERENCE RELATED COMMANDS
+% ----------------------------------------------------
+% Generic reference related
+
+\newcommand{\citep}[1]{
+{\color{uamai} [\cite{#1}]}
+}
+
+%\setbeamercolor{bibliography item}{parent=red}
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry author}{fg=uamai}
+\setbeamercolor*{bibliography entry journal}{fg=uamai}
+\setbeamercolor*{bibliography entry note}{fg=black}
+% -----------------------------------------------------
+% References specific for BiBTeX
+% -----------------------------------------------------
+\newcommand{\referencesslide}[2]{
+\referencebegin
+
+  \IfEqCase{#2}{
+    {EN}{
+    \begin{frame}[allowframebreaks,plain]{References}
+    }
+    {SK}{
+    \begin{frame}[allowframebreaks,plain]{Bibliografia}
+    }
+  }
+    \small
+    \bibliographystyle{apalike}
+    \bibliography{#1}
+    \end{frame}
+\referenceend
+}
+
+\newcommand{\bibliographyfile}[2]{
+    \IfEqCase{#2}{
+    {EN}{
+            \usepackage[
+            citestyle       = authoryear,
+            doi             = false,
+            isbn            = false,
+            url             = false,
+            maxcitenames    = 1,
+            backend         = biber
+            ]{biblatex}
+            \addbibresource{#1}
+            \AtBeginBibliography{\small}
+            \AtEveryCitekey{\iffootnote{\color{uamai}\scriptsize}{\color{uamai}}}
+        }
+    {SK}{
+            \usepackage[slovak]{babel}
+            \usepackage[
+            citestyle       = authoryear,
+            doi             = false,
+            isbn            = false,
+            url             = false,
+            maxcitenames    = 1,
+            backend         = biber
+            ]{biblatex}
+            \DefineBibliographyStrings{slovak}{
+            andothers = {{a\ kol\adddot}},
+            }
+            \addbibresource{#1}
+            \AtBeginBibliography{\small}
+            \AtEveryCitekey{\iffootnote{\color{uamai}\scriptsize}{\color{uamai}}}
+        }
+     }
+}
+
+% References slide for biber
+\newcommand{\referencesslidebiber}[1]{
+\referencebegin
+
+  \IfEqCase{#1}{
+    {EN}{
+    \begin{frame}[allowframebreaks,plain]{References}
+    }
+    {SK}{
+    \begin{frame}[allowframebreaks,plain]{Bibliografia}
+    }
+  }
+    \printbibliography
+    \end{frame}
+\referenceend
+}
+
+% END REFERENCE RELATED COMMANDS
+% -----------------------------------------------------
+
+%%% Formatting captions
+\usepackage{caption}
+\DeclareCaptionFont{tiny}{\tiny}
+\captionsetup{font=scriptsize} % Font size
+\captionsetup{labelformat=empty} % No labels
+\captionsetup{justification=centering} % Centered
+
+%%% Title font
+\setbeamerfont{title}{size=\Large,parent=structure} % Bold fonts
+
+%%% Remove navigation
+\setbeamertemplate{navigation symbols}{} % No navigation buttons, they are useless
+
+% Rectangles for decoration
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+
+% Author email address command
+\newcommand{\email}[1]{\url{#1}}
+
+
+
+
+
+\newcommand{\referencebegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+
+\newcommand{\referenceend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+
+\newcommand{\reviewbegin}{
+   \newcounter{framenumberreview}
+   \setcounter{framenumberreview}{\value{framenumber}}
+}
+
+\newcommand{\reviewend}{
+   \addtocounter{framenumberreview}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberreview}}
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberreview}
+   \setcounter{framenumberreview}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \addtocounter{framenumberreview}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberreview}}
+}
+
+
+% Thank you slide
+\newcommand{\thankyouslide}[2]{
+\begin{frame}[plain]
+
+\begin{tikzpicture}[remember picture, overlay]
+
+\fill[UAMAIgreen] (-1,-2.8) rectangle (10.2,-4.2);
+\end{tikzpicture}
+
+  \IfEqCase{#2}{
+    {EN}{
+    \vspace{8em}
+      {\Huge Thank you for your attention!}
+      \vspace{9em}\\
+      Please feel free to contact me any time at
+     \url{#1}
+    }
+    {SK}{
+    \vspace{8em}
+      \color{white}{\Huge Ďakujem za Vašu pozornosť.}
+      \vspace{9em}\\
+      Môžete ma kontaktovať hocikedy na adrese
+     \url{#1}
+    }
+    {AS}{
+\begin{tikzpicture}[remember picture, overlay]
+ \node[anchor=north west] (aslogo) at ([xshift=1.3cm,yshift=-0.3cm]current page.north west)
+       {\includegraphics[width=10cm]{automationshield}};
+\fill[UAMAIgreen] (-2,-3.0) rectangle (10.2,-4.2);
+\end{tikzpicture}
+
+\vspace{7.5em}
+{\Huge Thank you for your attention!}
+\vspace{4em}\\
+Make sure to visit \url{www.automationshield.com} for more information.
+\vfill
+Please feel free to contact me any time at
+\url{#1}
+
+    }
+  }
+\addtocounter{framenumber}{-1}
+\end{frame}
+}
+
+\newcommand{\titleslide}[3][]{
+
+    \lstset{aboveskip=3pt, belowskip=3pt} %Space above and below lstlist boxes
+    \begin{frame}[plain]
+
+    \begin{tikzpicture}[remember picture, overlay]
+    \node (logo background) [shape=rectangle, fill=white, minimum height=1.3cm, minimum width=80mm, anchor=south west] at ([xshift=7.5cm,yshift=1.5cm]current page.south west) {};
+    \end{tikzpicture}
+
+    %detect if optional argument
+
+  \IfEqCase{#2}{
+    {EN}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (uamai) at ([xshift=7cm,yshift=0.5cm]current page.south west)
+        {\includegraphics[height=3cm]{uamai}};
+    \end{tikzpicture}
+    }
+    {SK}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (urkLogo) at ([xshift=8.3cm,yshift=1.5cm]current page.south west)
+        {\includegraphics[height=10mm]{urkLogo}};
+    \end{tikzpicture}
+    }
+  }
+
+  \IfEqCase{#3}{
+    {STU}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (stu) at ([xshift=0.5cm,yshift=0.5cm]current page.south west)
+        {\includegraphics[height=3cm]{stu}};
+    \end{tikzpicture}
+    }
+    {STU_EXT}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (stuext) at ([xshift=-0.5cm,yshift=0.9cm]current page.south west)
+        {\includegraphics[height=2.2cm]{stuext}};
+    \end{tikzpicture}
+    }
+    {SjF}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (sjf) at ([xshift=0.5cm,yshift=0.5cm]current page.south west)
+        {\includegraphics[height=3cm]{sjf}};
+    \end{tikzpicture}
+    }
+    {SjF_EXT}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west] (sjfext) at ([xshift=-0.5cm,yshift=0.9cm]current page.south west)
+        {\includegraphics[height=2.2cm]{sjfext}};
+    \end{tikzpicture}
+    }
+  }
+
+  \titlepage
+
+\vspace{1.3cm}
+
+\setbox0=\hbox{#1\unskip}\ifdim\wd0=0pt
+
+  %\hfill\insertshortdate{}
+
+\else
+    \IfEqCase{#2}{
+    {EN}{
+    Thesis supervisor: #1 \hfill \insertshortdate{}
+     }
+    {SK}{
+    Vedúci práce: #1 \hfill \insertshortdate{}
+     }
+
+    }
+\fi
+
+
+
+
+  \addtocounter{framenumber}{-1}
+
+\end{frame}
+}
+
+\newenvironment{reviewerquestions}[1]
+{
+\reviewbegin                                 % Use this to answer reviewer / Používať na predpripravené odpovede na oponentské otázky
+  \IfEqCase{#1}{
+    {EN}{
+    \begin{frame}[allowframebreaks,plain]{Reviewer's questions} % {Otázky oponenta}
+    }
+    {SK}{
+      \begin{frame}[allowframebreaks,plain]{Otázky oponenta} % {Otázky oponenta}
+    }
+  }
+}
+{
+\end{frame}
+\reviewend                                  % Use this to answer reviewer / Používať na pripravené odpovede na oponentské otázky
+}
+ %bugfix
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
