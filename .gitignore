@@ -1,0 +1,7 @@
+# ignore all files produced by LaTeX
+*.log
+*.synctex
+*.aux
+*.bbl
+*.blg
+
