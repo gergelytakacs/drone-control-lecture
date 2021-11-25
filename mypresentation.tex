@@ -54,7 +54,7 @@
 
 \begin{frame}{Opakovanie: Riadená sústava}
   \begin{itemize}
-    \item<1-> Riadená sústava alebo systém \angl{plant, system}, napr. motory drona
+    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, napr. motory drona
     \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM do motorov
     \item<3-> Výstup $y(t)$ \angl{output} je meraná, tzv. manipulovaná veličina \angl{manipulated variable}; napr. klopenie $\theta(t)$ drona
     \item<4-> Porucha \angl{disturbance} $w(t)$ je vplyv vonkajšieho prostredia, napr. vietor
@@ -109,15 +109,23 @@
     \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. parné stroje)
     \item<3-> Dobrým kompromisom medzi komplexnosťou (pochopenie, návrh) a implementovateľnosťou je PID riadenie
     \item<4-> Asi 95\% riadiacich algoritmov v praxi sú PID...
-    \item<5-> ...a väčšina z nich sú slabo naladené. 
+    \item<5-> ...a väčšina z nich sú slabo naladené.
   \end{itemize}
 
-\begin{onlyenv}<1-3>
+\begin{onlyenv}<1>
 \begin{figure}
 \centering
   \includegraphics[width=100mm]{loop_all}\\
 \end{figure}
 \end{onlyenv}
+
+\begin{onlyenv}<2>
+\begin{figure}
+\centering
+  \includegraphics[width=100mm]{loop_Whatevs}\\
+\end{figure}
+\end{onlyenv}
+
 
 
 \begin{onlyenv}<3->
@@ -129,6 +137,88 @@
 \end{frame}
 
 
+\begin{frame}[t]{Opakovanie: PID}
+  \begin{itemize}
+    \item<1-> \textbf{Súčasnosť} = proporcionálna zložka: okamžitá odchýlka $e(t)$, ale majme možnosť na ladenie, tak $K_Pe(t)$.
+    \item<2-> \textbf{Minulosť} = integračná zložka: celková odchýlka $e(t)$ v minulosti, ale majme možnosť na ladenie, tak $K_I\int_0^te(t)\mathrm{d}t$.
+    \item<3-> \textbf{Budúcnosť} = derivačná zložka: projektovaná odchýlka $e(t)$ do budúcnosti, ale majme možnosť na ladenie, tak $K_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}$.
+  \end{itemize}
+
+\begin{onlyenv}<1>
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{PID_P}\\
+\end{figure}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{PID_I}\\
+\end{figure}
+\end{onlyenv}
+
+\begin{onlyenv}<3>
+\begin{figure}
+\centering
+  \includegraphics[width=60mm]{PID_D}\\
+\end{figure}
+\end{onlyenv}
+
+
+\begin{onlyenv}<4->
+tzv. paralelná (ideálna) forma
+\begin{align}
+u(t)= K_Pe(t)+K_I\int_0^te(t)\mathrm{d}t+K_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}
+\end{align}
+\end{onlyenv}
+
+\begin{onlyenv}<5>
+alebo tzv. štandardná forma (máme intuitívnejšie časové konštanty, ale zosilnenie je viazané)
+\begin{align}
+u(t)= K_P\left(e(t)+\frac{1}{T_I}\int_0^te(t)\mathrm{d}t+T_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}\right)
+\end{align}
+\end{onlyenv}
+\end{frame}
+
+
+
+
+\begin{frame}[t]{Opakovanie: Vzorkovanie, tvarovanie}
+  \begin{itemize}
+  \item<1-> Výpočtová realizácia neumožní počítať spojito, preto
+    \begin{itemize}
+      \item Vzorkujeme na strane výstupov --- ADC + slučka v hard real-time pomocou časovačov
+      \item Tvarujeme na strane vstupov --- zero order hold (ZOH) len znamená podržíme hodnotu počas vzorky
+    \end{itemize}
+  \item<2-> Vzorkovanie mení spojitý čas na $t=kT_s$. Perióda je voliteľná, ale
+    \begin{itemize}
+      \item musí zachytiť dominantnú dynamiku riadeného deja,
+      \item a výpočtová realizácia musí stíhať.
+  \end{itemize}
+\end{itemize}
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{loop_Sampling}\\
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[t]{Opakovanie: Vzorkovanie, tvarovanie 2}
+  \begin{itemize}
+    \item<1-> Systém, resp. proces zostáva väčšinou spojitý
+    \item<2-> Koncepty ako integrácia, derivácia musíme numericky aproximovať, t.j. ak $T_s$ je vzorkovací čas, naše PID bude
+        \begin{align}
+        u(k)= K_Pe(k)+K_I\underbrace{\sum_0^te(k)T_s}_{\mathrm{``obdlzniky''}}+K_D\underbrace{\frac{e(k)-e(k-1)}{T_s}}_{\mathrm{``vstupanie''}}
+        \end{align}
+    \item<3->  alebo v prakticky vhodnejšej tzv. inkrementálnej forme pre MCU (bez dôkazu, viď. \cite{W:PID})
+        {\tiny
+        \begin{align}
+        u(k)=u(k-1)+\left(K_P+K_IT_s+\frac{K_D}{T_s}\right)e(k)+\left(-K_P -2\frac{K_D}{T_s}\right)e(k-1)+\frac{K_D}{T_s}e(k-2)
+         \end{align}
+         }
+\end{itemize}
+\end{frame}
 
 
 
