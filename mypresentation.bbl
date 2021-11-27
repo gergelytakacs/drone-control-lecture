@@ -19,28 +19,31 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{W:PID}{misc}{}
+    \entry{AP:PID}{misc}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=9c677286866aad38f8e9b660f5411814}{%
-           family={{Wikipedia}},
-           familyi={W\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=9d6c08741d56d97df43bfdcb6cdcceec}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \strng{namehash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \strng{fullhash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \strng{bibnamehash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \strng{authorbibnamehash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \strng{authornamehash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \strng{authorfullhash}{9d6c08741d56d97df43bfdcb6cdcceec}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{[online]}
-      \field{note}{[cited 25.11.2021]; Available from \url{https://en.wikipedia.org/wiki/PID_controller}}
-      \field{title}{{PID controller}}
-      \field{year}{2021}
+      \field{note}{ArduPilot UnConference 2018, uploaded Feb 22, 2018 [cited 24.11.2021]; Available from \url{https://www.youtube.com/watch?v=-PC69jcMizA}}
+      \field{title}{{Pratical PID implementation and the new Position Controller}}
+      \field{year}{2018}
     \endentry
   \enddatalist
 \endrefsection

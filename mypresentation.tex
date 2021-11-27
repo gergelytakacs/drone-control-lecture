@@ -13,7 +13,7 @@
 {Working title drone control}
 \subtitle{\vspace{1em}Riadenie dronov}
 \author[]{prof. Ing. Gergely Takács, PhD.}
-\date[XX.12.2021]{}
+\date[07.12.2021]{}
 \slideheader{SK}
 \slidefooter{SK}{STU}
 \bibliographyfile{gergelytakacsBibliography.bib}{SK}
@@ -26,225 +26,141 @@
 %viem si predstavit klasika kaskadne riadenie ala arducopter
 %%potom mozno LQR a Integral backstepping a vysvetlit co ma aku vyhodu ...
 
-%\begin{frame}[fragile]{Test tikz}
-%
-%
-%    \begin{figure}[ht]
-%        \begin{center}
-%            \begin{tikzpicture}[auto, node distance=1cm,>=latex']
-%            \node [input, name=input] {};
-%            \node [sum, right=of input] (sum) {};
-%            \node [block, right=of sum] (controller) {$C(s)$};
-%            \node [block, right=2 of controller] (plant) {$G(s)$};
-%            \node [output, right=of plant] (output) {};
-%
-%            \draw [draw,->] (input) -- node {$U(s)$} (sum);
-%            \draw [->] (sum) -- node {} (controller);
-%            \draw [->] (controller) -- node {} (plant);
-%            \draw [->] (plant) -- node [name=y] {$Y(s)$}(output);
-%            \draw [->] (y) -- ++ (0,-2) -| node [pos=0.99] {$-$} (sum);
-%            \end{tikzpicture}
-%        \end{center}
-%    \end{figure}
-
-%\end{frame}
-
-%\input{Pocitace}
-
+%\input{_opakovanie.tex}
 
 \begin{frame}{Opakovanie: Riadená sústava}
-  \begin{itemize}
-    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, napr. motory drona
-    \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM do motorov
-    \item<3-> Výstup $y(t)$ \angl{output} je meraná, tzv. manipulovaná veličina \angl{manipulated variable}; napr. klopenie $\theta(t)$ drona
-    \item<4-> Porucha \angl{disturbance} $w(t)$ je vplyv vonkajšieho prostredia, napr. vietor
-  \end{itemize}
-
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{loop_1}\\
-\end{figure}
-\end{frame}
-
-\begin{frame}{Opakovanie: Meranie}
-  \begin{itemize}
-    \item<1-> Výstupy $y(t)$ sú idealizované
-    \item<2-> Poruchy, teda šum merania $v(t)$ a dynamika snímača vplýva na výsledok
-    \item<3-> Merania môžeme korigovať, resp. nemerané veličiny odhadnúť $\hat{y}(t)$
-    \item<4-> Pre jednoduchosť často predpokladáme ideálne meranie ${y}(t)=\hat{y}(t)$
-  \end{itemize}
-
-\begin{onlyenv}<1-3>
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{loop_2}\\
-\end{figure}
-\end{onlyenv}
-
-
-\begin{onlyenv}<4>
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{loop_2b}\\
-\end{figure}
-\end{onlyenv}
-\end{frame}
-
-\begin{frame}{Opakovanie: Riadiacia odchýlka}
-  \begin{itemize}
-    \item<1-> Žiadaná hodnota alebo referencia \angl{setpoint, reference} $r(t)$ vyjadruje na akú hodnotu chceme dostať výstup, potom
-    \item<2-> Rozdiel medzi žiadanou hodnotou a výstupom $e(t)=r(t)-y(t)$ je odchýlka riadenia \angl{error}
-  \end{itemize}
-
-\begin{figure}
-\centering
-  \includegraphics[width=100mm]{loop_ref}\\
-\end{figure}
-\end{frame}
-
-
-\begin{frame}[t]{Opakovanie: Riadiaci algoritmus}
-  \begin{itemize}
-    \item<1-> Riadenie je logika ktorá prepočíta odchýlku riadenia $e(t)$ na vstupy $u(t)$
-    \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. parné stroje)
-    \item<3-> Dobrým kompromisom medzi komplexnosťou (pochopenie, návrh) a implementovateľnosťou je PID riadenie
-    \item<4-> Asi 95\% riadiacich algoritmov v praxi sú PID...
-    \item<5-> ...a väčšina z nich sú slabo naladené.
-  \end{itemize}
-
-\begin{onlyenv}<1>
-\begin{figure}
-\centering
-  \includegraphics[width=100mm]{loop_all}\\
-\end{figure}
-\end{onlyenv}
-
-\begin{onlyenv}<2>
-\begin{figure}
-\centering
-  \includegraphics[width=100mm]{loop_Whatevs}\\
-\end{figure}
-\end{onlyenv}
-
-
-
-\begin{onlyenv}<3->
-\begin{figure}
-\centering
-  \includegraphics[width=100mm]{loop_PID}\\
-\end{figure}
-\end{onlyenv}
-\end{frame}
-
-
-\begin{frame}[t]{Opakovanie: PID}
-  \begin{itemize}
-    \item<1-> \textbf{Súčasnosť} = proporcionálna zložka: okamžitá odchýlka $e(t)$, ale majme možnosť na ladenie, tak $K_Pe(t)$.
-    \item<2-> \textbf{Minulosť} = integračná zložka: celková odchýlka $e(t)$ v minulosti, ale majme možnosť na ladenie, tak $K_I\int_0^te(t)\mathrm{d}t$.
-    \item<3-> \textbf{Budúcnosť} = derivačná zložka: projektovaná odchýlka $e(t)$ do budúcnosti, ale majme možnosť na ladenie, tak $K_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}$.
-  \end{itemize}
-
-\begin{onlyenv}<1>
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{PID_P}\\
-\end{figure}
-\end{onlyenv}
-
-\begin{onlyenv}<2>
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{PID_I}\\
-\end{figure}
-\end{onlyenv}
-
-\begin{onlyenv}<3>
-\begin{figure}
-\centering
-  \includegraphics[width=60mm]{PID_D}\\
-\end{figure}
-\end{onlyenv}
-
-
-\begin{onlyenv}<4->
-tzv. paralelná (ideálna) forma
-\begin{align}
-u(t)= K_Pe(t)+K_I\int_0^te(t)\mathrm{d}t+K_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}
-\end{align}
-\end{onlyenv}
-
-\begin{onlyenv}<5>
-alebo tzv. štandardná forma (máme intuitívnejšie časové konštanty, ale zosilnenie je viazané)
-\begin{align}
-u(t)= K_P\left(e(t)+\frac{1}{T_I}\int_0^te(t)\mathrm{d}t+T_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}\right)
-\end{align}
-\end{onlyenv}
-\end{frame}
-
-
-
-
-\begin{frame}[t]{Opakovanie: Vzorkovanie, tvarovanie}
-  \begin{itemize}
-  \item<1-> Výpočtová realizácia neumožní počítať spojito, preto
-    \begin{itemize}
-      \item Vzorkujeme na strane výstupov --- ADC + slučka v hard real-time pomocou časovačov
-      \item Tvarujeme na strane vstupov --- zero order hold (ZOH) len znamená podržíme hodnotu počas vzorky
-    \end{itemize}
-  \item<2-> Vzorkovanie mení spojitý čas na $t=kT_s$. Perióda je voliteľná, ale
-    \begin{itemize}
-      \item musí zachytiť dominantnú dynamiku riadeného deja,
-      \item a výpočtová realizácia musí stíhať.
-  \end{itemize}
-\end{itemize}
-\begin{figure}
-\centering
-  \includegraphics[width=\textwidth]{loop_Sampling}\\
-\end{figure}
-\end{frame}
-
-
-\begin{frame}[t]{Opakovanie: Vzorkovanie, tvarovanie 2}
-  \begin{itemize}
-    \item<1-> Systém, resp. proces zostáva väčšinou spojitý
-    \item<2-> Koncepty ako integrácia, derivácia musíme numericky aproximovať, t.j. ak $T_s$ je vzorkovací čas, naše PID bude
-        \begin{align}
-        u(k)= K_Pe(k)+K_I\underbrace{\sum_0^te(k)T_s}_{\mathrm{``obdlzniky''}}+K_D\underbrace{\frac{e(k)-e(k-1)}{T_s}}_{\mathrm{``vstupanie''}}
-        \end{align}
-    \item<3->  alebo v prakticky vhodnejšej tzv. inkrementálnej forme pre MCU (bez dôkazu, viď. \cite{W:PID})
-        {\tiny
-        \begin{align}
-        u(k)=u(k-1)+\left(K_P+K_IT_s+\frac{K_D}{T_s}\right)e(k)+\left(-K_P -2\frac{K_D}{T_s}\right)e(k-1)+\frac{K_D}{T_s}e(k-2)
-         \end{align}
-         }
-\end{itemize}
-\end{frame}
-
-
-
-%\begin{frame}{Opakovanie: Riadená sústava}
-%  \begin{itemize}
-%    \item<1-> blah
-%    \item<2-> blah blah
-%  \end{itemize}
-
-%%\begin{onlyenv}<1>
-%\begin{figure}
-%\centering
-%  \includegraphics[width=\textwidth]{loop_full}\\
-%\end{figure}
-%%\end{onlyenv}
-%\end{frame}
-%
-\begin{frame}{Opakovanie: Riadená sústava}
-
-
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{rollpitch}\\
 \end{figure}
 \end{frame}
 
+
+\begin{frame}{Rýchlosť zmeny orientácie}
+\begin{itemize}
+  \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
+  \item<2-> Sme na najnižšej úrovni riadenia --- je to zároveň aj najdôležitejšia slučka \citep{AP:PID}
+  \end{itemize}
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate}\\
+\end{figure}
+
+  \end{frame}
+
+\begin{frame}[t]{Orientácia}
+\begin{itemize}
+  \item<1-> Riadiť orientáciu len na základe zmeny rýchlosti by bolo dosť neintuitívne, potrebujeme prepočítať $r_{\Theta} \rightarrow r_{\dot{\Theta}}$
+  \item<2-> Tvárme sa, že poznáme žiadané orientácie, napr. klopenie $r_{\Theta}$.
+  \item<3-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested control}.
+  \item<4-> Nadradené slučky sú pomalšie \citep{AP:PID}, vytvára to istý ``filter'', t.j. nemôžeme rýchlejšie ovládať rýchlosť ako polohu (cca. o rád, min polovicu pomalšie)
+  \end{itemize}
+
+  \begin{onlyenv}<3->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Angle}\\
+\end{figure}
+\end{onlyenv}
+
+  \end{frame}
+
+
+
+    \begin{frame}[t]{Orientácia 2}
+\begin{itemize}
+  \item<1-> Pri PID skôr PI\footnote{ArduCopter používa P regulátor}, lebo
+  \begin{itemize}
+            \item iba P neodstráni, trvalú odchýlku
+            \item D reaguje príliš agresívne na šum.
+  \end{itemize}
+      \item<2-> Do slučky dopracujeme doprednú väzbu \angl{feedforward} ktorá zrýchli odozvu regulácie
+      \item<3-> ``Whatever works'' - netreba mystifikovať, je to len matematika\footnote{napr. }
+  \end{itemize}
+
+
+  \begin{onlyenv}<2->
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Angle2}\\
+\end{figure}
+\end{onlyenv}
+
+  \end{frame}
+  
+  
+
+\begin{frame}[t]{Ohraničenie vstupov}
+  \begin{itemize}
+    \item<1-> Akčné zásahy majú svoje ohraničenia (\angl{constraints}), ako donútime ich dodržanie? Saturáciou (orezávaním) hodnôt, ktoré skutočne vypočíta PID.
+    \item<2-> Saturácia vnáša nelinearitu, vplýva na výkon riadenia aj stabilitu.
+    \item<3-> Aj iné veličiny môžeme saturovať, napr. žiadané hodnoty. Ako by sme ohraničili výstup?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Nahromadenie integračnej zložky}
+  \begin{itemize}
+    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne nahromadiť \angl{windup}.
+    \item<2-> Akonáhle vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
+    \item<3-> Tento nežiadaný efekt je saturácia integračnej zložky \angl{integral windup}.
+    \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Nahromadenie integračnej zložky 2}
+  \begin{itemize}
+  \item<1-> ArduPilot - Ak akčný člen je akurát saturovaný, podrž hodnotu I zložky. Nižšie to môže ísť, vyššie nie \citep{AP:PID}.
+  \item<2-> ArduPilot - Keďže máme kaskádnu konfiguráciu PID slučiek, saturačný znak postupuje cez hierarchiu nižšie a nižšie aby zastavil nahromadenie I zložky \citep{AP:PID}.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[t]{Tvarovanie žiadaných hodnôt}
+  \begin{itemize}
+  \item<1-> Dron je stabilizovaný, pilot/ROS náhle chce $r_{\Phi}=$+30$^\circ$ klonenie. Čo sa stane s riadením?
+  \item<2->  Žiadaná hodnota je skokový signál. Derivácia skoku je... D zložka a tým aj vstup do akčných členov vystrelí!
+  \item<3->  Potrebujeme tvarovať vstupy do regulácie \angl{input shaping}, t.j. tvarovať žiadané hodnoty:
+        \begin{itemize}
+  \item Pomalšie vzorkovanie na rýchlejšie (interpolácia) \footnote{ArduCopter 50 Hz $\rightarrow$ 400 Hz \citep{AP:PID}}
+  \item Vyhladenie filtráciou, saturácie
+  \item<4-> Ak hovoríme o manuálnom pilotovaní, tvarovanie určuje aký ``pocit'' je riadiť stroj
+  \end{itemize}
+  \end{itemize}
+      
+        \begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{InputShaping_1}\\
+\end{figure}
+\end{onlyenv}
+
+
+        \begin{onlyenv}<3->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{InputShaping_2}\\
+\end{figure}
+\end{onlyenv}
+
+
+
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+Notes: \cite{AP:PID}
+
+User (ROS) $\rightarrow$ Shaping $\rightarrow$ PID $\rightarrow$ Actuators
+
+50 Hz -> 400 Hz
+
+\end{frame}
 
 
 \thankyouslide{gergely.takacs@stuba.sk}{SK}
