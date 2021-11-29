@@ -41,7 +41,7 @@
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
   \item<2-> Sme na najnižšej úrovni riadenia --- je to zároveň aj najdôležitejšia slučka \citep{AP:PID}
   \end{itemize}
-  
+
   \begin{onlyenv}<1>
   \begin{figure}
 \centering
@@ -65,7 +65,7 @@
     \item<3-> Saturácia vnáša nelinearitu, vplýva na výkon riadenia aj stabilitu.
     \item<4-> Aj iné veličiny môžeme saturovať, napr. žiadané hodnoty. Ako by sme ohraničili výstup?
   \end{itemize}
-  
+
     \begin{onlyenv}<2->
   \begin{figure}
 \centering
@@ -77,8 +77,9 @@
 
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
-    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to nahromadiť \angl{windup}.
-    \item<2-> Akonáhle vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
+    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne hromadiť \angl{windup}.
+    %alebo sa to zbtočne nahromadí/začína sa zbytočne nahromaďovať (nemôže sa yačínať robiť sloveso v dokonavom vide...)
+    \item<2-> Akonáhle sa vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
     \item<3-> Tento nežiadaný efekt je saturácia integračnej zložky \angl{integral windup}.
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
@@ -159,7 +160,7 @@
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
     \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne hromadiť \angl{windup}.
-    %alebo sa to zbtočne nahromadí/začína sa zbytočne nahromaďovať (nemôže sa yačínať robiť sloveso v dokonavom vide...) 
+    %alebo sa to zbtočne nahromadí/začína sa zbytočne nahromaďovať (nemôže sa yačínať robiť sloveso v dokonavom vide...)
     \item<2-> Akonáhle sa vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
     \item<3-> Tento nežiadaný efekt je saturácia integračnej zložky \angl{integral windup}.
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
@@ -272,7 +273,7 @@
 
 \begin{frame}[t]{Automatické nastavenie parametrov}
 \begin{itemize}
-  \item ArduPilot (ArduCopter) --- Napodobňuje heuristiku \citep{AP:LogSeminar} 
+  \item ArduPilot (ArduCopter) --- Napodobňuje heuristiku \citep{AP:LogSeminar}
   \begin{itemize}
   \item Zvyšuje D parameter pomaly
   \item Akonáhle deteguje osciláciu, zníži D parameter
@@ -305,4 +306,4 @@ Min 24 tazsie uchopytelne koncepty pre prezentaciu, dava menej konkretnosti
 %\backupend
 
 
-\end{document} 
+\end{document}
