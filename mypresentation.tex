@@ -77,10 +77,10 @@
 
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
-    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne hromadiť \angl{windup}.
+    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa nahromaďovať \angl{windup}.
     %alebo sa to zbtočne nahromadí/začína sa zbytočne nahromaďovať (nemôže sa yačínať robiť sloveso v dokonavom vide...)
     \item<2-> Akonáhle sa vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
-    \item<3-> Tento nežiadaný efekt je saturácia integračnej zložky \angl{integral windup}.
+    \item<3-> To je saturácia integračnej zložky \angl{integral windup}.
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
       \begin{onlyenv}<1->
@@ -166,8 +166,8 @@
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
 \end{frame}
-=======
->>>>>>> Stashed changes
+
+
 
 
 
