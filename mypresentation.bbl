@@ -19,6 +19,29 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{AP:PIDDOC}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1f79341042063f30812f2942a48d19ed}{%
+           family={{ArduPilot}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{fullhash}{1f79341042063f30812f2942a48d19ed}
+      \strng{bibnamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authorbibnamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authornamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authorfullhash}{1f79341042063f30812f2942a48d19ed}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 29.11.2021]; Available from \url{https://ardupilot.org/dev/docs/apmcopter-programming-attitude-control-2.html}}
+      \field{title}{{CCopter Attitude Control}}
+      \field{year}{2021}
+    \endentry
     \entry{AP:PID}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=9d6c08741d56d97df43bfdcb6cdcceec}{%
@@ -44,6 +67,55 @@
       \field{note}{ArduPilot UnConference 2018, uploaded Feb 22, 2018 [cited 24.11.2021]; Available from \url{https://www.youtube.com/watch?v=-PC69jcMizA}}
       \field{title}{{Pratical PID implementation and the new Position Controller}}
       \field{year}{2018}
+    \endentry
+    \entry{PX4:PID}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
+           family={{PX4 Autopilot}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{fullhash}{8e447a2840db6a861298c4101f122d23}
+      \strng{bibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 29.11.2021]; Available from \url{https://docs.px4.io/master/en/flight_stack/controller_diagrams.html}}
+      \field{title}{{Controller Diagrams --- Multicopter Control Architecture}}
+      \field{year}{2021}
+    \endentry
+    \entry{AP:LogSeminar}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e03aa2792f85bde1bb795365e3bdc0b7}{%
+           family={Tridgell},
+           familyi={T\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \strng{fullhash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \strng{bibnamehash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \strng{authorbibnamehash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \strng{authornamehash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \strng{authorfullhash}{e03aa2792f85bde1bb795365e3bdc0b7}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 10.11.2021]; Available from \url{https://www.youtube.com/watch?v=WcfLTW_qZ08&list=PLC8WVaJJhN4ya_HDxh6qGBT6VbjXR6L5p}}
+      \field{title}{{ArduPilot Log Analysis Seminar}}
+      \field{year}{2021}
     \endentry
   \enddatalist
 \endrefsection

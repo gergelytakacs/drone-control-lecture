@@ -2354,11 +2354,21 @@
     <bcf:citekey order="8">AP:PID</bcf:citekey>
     <bcf:citekey order="9">AP:PID</bcf:citekey>
     <bcf:citekey order="10">AP:PID</bcf:citekey>
-    <bcf:citekey order="11">AP:PID</bcf:citekey>
-    <bcf:citekey order="12">AP:PID</bcf:citekey>
-    <bcf:citekey order="13">AP:PID</bcf:citekey>
+    <bcf:citekey order="11">PX4:PID</bcf:citekey>
+    <bcf:citekey order="11">AP:PIDDOC</bcf:citekey>
+    <bcf:citekey order="12">PX4:PID</bcf:citekey>
+    <bcf:citekey order="12">AP:PIDDOC</bcf:citekey>
+    <bcf:citekey order="13">PX4:PID</bcf:citekey>
+    <bcf:citekey order="13">AP:PIDDOC</bcf:citekey>
     <bcf:citekey order="14">AP:PID</bcf:citekey>
     <bcf:citekey order="15">AP:PID</bcf:citekey>
+    <bcf:citekey order="16">AP:PID</bcf:citekey>
+    <bcf:citekey order="17">AP:PID</bcf:citekey>
+    <bcf:citekey order="18">AP:PID</bcf:citekey>
+    <bcf:citekey order="19">AP:PID</bcf:citekey>
+    <bcf:citekey order="20">AP:PID</bcf:citekey>
+    <bcf:citekey order="21">AP:LogSeminar</bcf:citekey>
+    <bcf:citekey order="22">AP:PID</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

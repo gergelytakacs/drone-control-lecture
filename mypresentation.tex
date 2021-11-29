@@ -28,7 +28,7 @@
 
 %\input{_opakovanie.tex}
 
-\begin{frame}{Opakovanie: Riadená sústava}
+\begin{frame}{Riadená sústava}
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{rollpitch}\\
@@ -36,17 +36,83 @@
 \end{frame}
 
 
-\begin{frame}{Rýchlosť zmeny orientácie}
+\begin{frame}[t]{Rýchlosť zmeny orientácie}
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
   \item<2-> Sme na najnižšej úrovni riadenia --- je to zároveň aj najdôležitejšia slučka \citep{AP:PID}
   \end{itemize}
+  
+  \begin{onlyenv}<1>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate}\\
 \end{figure}
+\end{onlyenv}
+
+  \begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate2}\\
+\end{figure}
+\end{onlyenv}
 
   \end{frame}
+
+\begin{frame}[t]{Ohraničenie vstupov}
+  \begin{itemize}
+    \item<1-> Akčné zásahy majú svoje ohraničenia (\angl{constraints})
+    \item<2-> Ako donútime ich dodržanie? Saturáciou (orezávaním) hodnôt, ktoré skutočne vypočíta PID.
+    \item<3-> Saturácia vnáša nelinearitu, vplýva na výkon riadenia aj stabilitu.
+    \item<4-> Aj iné veličiny môžeme saturovať, napr. žiadané hodnoty. Ako by sme ohraničili výstup?
+  \end{itemize}
+  
+    \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate3}\\
+\end{figure}
+\end{onlyenv}
+\end{frame}
+
+
+\begin{frame}[t]{Nahromadenie integračnej zložky}
+  \begin{itemize}
+    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to nahromadiť \angl{windup}.
+    \item<2-> Akonáhle vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
+    \item<3-> Tento nežiadaný efekt je saturácia integračnej zložky \angl{integral windup}.
+    \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
+  \end{itemize}
+      \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate4}\\
+\end{figure}
+\end{onlyenv}
+
+\end{frame}
+
+\begin{frame}[t]{Nahromadenie integračnej zložky 2}
+  \begin{itemize}
+  \item<1-> ArduPilot - Ak akčný člen je akurát saturovaný, podrž hodnotu I zložky. Nižšie to môže ísť, vyššie nie \citep{AP:PID}.
+  \item<2-> ArduPilot - Keďže máme kaskádnu konfiguráciu PID slučiek, saturačný znak postupuje cez hierarchiu nižšie a nižšie aby zastavil nahromadenie I zložky \citep{AP:PID}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Šum a derivačná zložka}
+  \begin{itemize}
+    \item<1-> aaaaaa
+  \end{itemize}
+      \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate5}\\
+\end{figure}
+\end{onlyenv}
+
+\end{frame}
+
+
+
 
 \begin{frame}[t]{Orientácia}
 \begin{itemize}
@@ -69,7 +135,7 @@
 
     \begin{frame}[t]{Orientácia 2}
 \begin{itemize}
-  \item<1-> Pri PID skôr PI\footnote{ArduCopter používa P regulátor}, lebo
+  \item<1-> Pri PID skôr PI\footnote{ArduCopter a PX4 Autopilot používa P regulátor \citep{PX4:PID,AP:PIDDOC}}, lebo
   \begin{itemize}
             \item iba P neodstráni, trvalú odchýlku
             \item D reaguje príliš agresívne na šum.
@@ -87,17 +153,9 @@
 \end{onlyenv}
 
   \end{frame}
-  
-  
 
-\begin{frame}[t]{Ohraničenie vstupov}
-  \begin{itemize}
-    \item<1-> Akčné zásahy majú svoje ohraničenia (\angl{constraints}), ako donútime ich dodržanie? Saturáciou (orezávaním) hodnôt, ktoré skutočne vypočíta PID.
-    \item<2-> Saturácia vnáša nelinearitu, vplýva na výkon riadenia aj stabilitu.
-    \item<3-> Aj iné veličiny môžeme saturovať, napr. žiadané hodnoty. Ako by sme ohraničili výstup?
-  \end{itemize}
-\end{frame}
 
+<<<<<<< Updated upstream
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
     \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne hromadiť \angl{windup}.
@@ -107,13 +165,10 @@
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
 \end{frame}
+=======
+>>>>>>> Stashed changes
 
-\begin{frame}[t]{Nahromadenie integračnej zložky 2}
-  \begin{itemize}
-  \item<1-> ArduPilot - Ak akčný člen je akurát saturovaný, podrž hodnotu I zložky. Nižšie to môže ísť, vyššie nie \citep{AP:PID}.
-  \item<2-> ArduPilot - Keďže máme kaskádnu konfiguráciu PID slučiek, saturačný znak postupuje cez hierarchiu nižšie a nižšie aby zastavil nahromadenie I zložky \citep{AP:PID}.
-  \end{itemize}
-\end{frame}
+
 
 
 
@@ -128,7 +183,7 @@
   \item<4-> Ak hovoríme o manuálnom pilotovaní, tvarovanie určuje aký ``pocit'' je riadiť stroj
   \end{itemize}
   \end{itemize}
-      
+
         \begin{onlyenv}<2>
   \begin{figure}
 \centering
@@ -152,6 +207,82 @@
 
 \end{frame}
 
+\begin{frame}[t]{Inicializácia riadenia}
+\begin{itemize}
+  \item<1-> Ako naštartujeme riadenie? Aká je odchýlka $e(0)$ pri štarte?
+  \item<2-> Kritické pri zmene letových módov.
+  \item<3-> Pre ArduCopter \cite{AP:PID}
+    \begin{itemize}
+    \item Nadradené riadenie poloha vs. rýchlosť (P) --- tak aby vstup bol konštantný
+    \item Rýchlosť (PID) --- $e(0)=0$, I zložka s konštantným vstupom, zrátať D pri nastavení žiadanej hodnoty
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]{Poloha}
+\begin{itemize}
+  \item<1-> Najnižšia úroveň je riadenie orientácie, tj. uhly $\Omega={\Phi, \Theta, \Sigma}$ a uhlové rýchlosti $\dot\Omega$ v ''body frame``
+\end{itemize}
+
+  \begin{onlyenv}<2->
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{PID_HighLevel}\\
+\end{figure}
+\end{onlyenv}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Je perfektné sledovanie trasy možné?}
+\begin{itemize}
+\item<1-> Majme trasu WP1 do WP2, všetko je v poriadku.
+\item<2-> Pridajme WP3 a rozmýšľajme čo sa deje pri WP2. Je možné preletieť nad WP2?
+\item<3-> Buď musíme úplne sa zastaviť alebo nemôžeme priamo preletieť --- ináč by sme potrebovali nekonečne veľké zrýchlenia
+\end{itemize}
+
+\begin{onlyenv}<1>
+  \begin{figure}
+\centering
+  \includegraphics[width=60mm]{PositionControl}\\
+\end{figure}
+\end{onlyenv}
+
+\begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=60mm]{PositionControl2}\\
+\end{figure}
+\end{onlyenv}
+
+\begin{onlyenv}<3>
+  \begin{figure}
+\centering
+  \includegraphics[width=60mm]{PositionControl3}\\
+\end{figure}
+\end{onlyenv}
+
+
+\end{frame}
+
+
+\begin{frame}[t]{Automatické nastavenie parametrov}
+\begin{itemize}
+  \item ArduPilot (ArduCopter) --- Napodobňuje heuristiku \citep{AP:LogSeminar} 
+  \begin{itemize}
+  \item Zvyšuje D parameter pomaly
+  \item Akonáhle deteguje osciláciu, zníži D parameter
+  \item Opakuje pre iné zložky/slučky
+\end{itemize}
+\item Intuitívne ale konzervatívne
+\end{itemize}
+
+\end{frame}
+
 
 
 \begin{frame}
@@ -160,8 +291,10 @@ Notes: \cite{AP:PID}
 User (ROS) $\rightarrow$ Shaping $\rightarrow$ PID $\rightarrow$ Actuators
 
 50 Hz -> 400 Hz
+Min 24 tazsie uchopytelne koncepty pre prezentaciu, dava menej konkretnosti
 
 \end{frame}
+
 
 
 \thankyouslide{gergely.takacs@stuba.sk}{SK}
