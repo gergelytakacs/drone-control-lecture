@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.17)  30 NOV 2021 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.17)  30 NOV 2021 13:20
 entering extended mode
 **./mypresentation.tex
 (mypresentation.tex
@@ -2272,20 +2272,11 @@ put line 127.
 [18
 
 ]
-<./figs//ATT_Angle.pdf, id=437, 626.5839pt x 150.65384pt>
-File: ./figs//ATT_Angle.pdf Graphic file (type pdf)
-<use ./figs//ATT_Angle.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 147.
-(pdftex.def)             Requested size: 342.2953pt x 82.30125pt.
-File: ./figs//urkLogoWhite.png Graphic file (type png)
-<use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 147.
-(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
-
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 147--147
-[][][][][]  
- []
-
+<./figs//PX4_Rate.jpg, id=436, 301.97464pt x 116.05182pt>
+File: ./figs//PX4_Rate.jpg Graphic file (type jpg)
+<use ./figs//PX4_Rate.jpg>
+Package pdftex.def Info: ./figs//PX4_Rate.jpg  used on input line 135.
+(pdftex.def)             Requested size: 284.52756pt x 109.34724pt.
 Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    date: 2019-05-09 05:38:28
 (epstopdf)                    size: 1271850 bytes
@@ -2295,26 +2286,27 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 135.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 147.
+put line 135.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[19
+ [19
 
-]
+ <./figs//PX4_Rate.jpg>]
+<./figs//ATT_Angle.pdf, id=445, 626.5839pt x 150.65384pt>
 File: ./figs//ATT_Angle.pdf Graphic file (type pdf)
 <use ./figs//ATT_Angle.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 147.
+Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 155.
 (pdftex.def)             Requested size: 342.2953pt x 82.30125pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 147.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 155.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 147--147
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 155--155
 [][][][][]  
  []
 
@@ -2327,26 +2319,26 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 147.
+put line 155.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [20
 
 ]
 File: ./figs//ATT_Angle.pdf Graphic file (type pdf)
 <use ./figs//ATT_Angle.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 147.
+Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 155.
 (pdftex.def)             Requested size: 342.2953pt x 82.30125pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 147.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 155.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 147--147
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 155--155
 [][][][][]  
  []
 
@@ -2359,26 +2351,58 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 147.
+put line 155.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [21
+
+]
+File: ./figs//ATT_Angle.pdf Graphic file (type pdf)
+<use ./figs//ATT_Angle.pdf>
+Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 155.
+(pdftex.def)             Requested size: 342.2953pt x 82.30125pt.
+File: ./figs//urkLogoWhite.png Graphic file (type png)
+<use ./figs//urkLogoWhite.png>
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 155.
+(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
+
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 155--155
+[][][][][]  
+ []
+
+Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
+(epstopdf)                    date: 2019-05-09 05:38:28
+(epstopdf)                    size: 1271850 bytes
+(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2021-11-24 09:10:42
+(epstopdf)                    size: 10106 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
+U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
+(epstopdf)             \includegraphics on input line 155.
+Package epstopdf Info: Output file is already uptodate.
+File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
+<use ./figs//footer_SK_STU-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
+put line 155.
+(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
+[22
 
  <./figs//ATT_Angle.pdf>]
 File: ./figs//ATT_Angle.pdf Graphic file (type pdf)
 <use ./figs//ATT_Angle.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 147.
+Package pdftex.def Info: ./figs//ATT_Angle.pdf  used on input line 155.
 (pdftex.def)             Requested size: 342.2953pt x 82.30125pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 147.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 155.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 147--147
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 155--155
 [][][][][]  
  []
 
@@ -2391,64 +2415,28 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 147.
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 147.
-(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[22
-
-]
-<./figs//ATT_Angle2.pdf, id=500, 626.5839pt x 204.3645pt>
-File: ./figs//ATT_Angle2.pdf Graphic file (type pdf)
-<use ./figs//ATT_Angle2.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 170.
-(pdftex.def)             Requested size: 342.2953pt x 111.64305pt.
-File: ./figs//urkLogoWhite.png Graphic file (type png)
-<use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 170.
-(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
-
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 170--170
-[][][][][]  
- []
-
-Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
-(epstopdf)                    date: 2019-05-09 05:38:28
-(epstopdf)                    size: 1271850 bytes
-(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
->
-(epstopdf)                    date: 2021-11-24 09:10:42
-(epstopdf)                    size: 10106 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
-U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 170.
-Package epstopdf Info: Output file is already uptodate.
-File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
-<use ./figs//footer_SK_STU-eps-converted-to.pdf>
-Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 170.
+put line 155.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [23
 
 ]
+<./figs//ATT_Angle2.pdf, id=507, 626.5839pt x 204.3645pt>
 File: ./figs//ATT_Angle2.pdf Graphic file (type pdf)
 <use ./figs//ATT_Angle2.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 170.
+Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 178.
 (pdftex.def)             Requested size: 342.2953pt x 111.64305pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 170.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 178.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 170--170
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 178--178
 [][][][][]  
- []
-
-
-Overfull \vbox (0.60826pt too high) detected at line 170
  []
 
 Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
@@ -2460,31 +2448,67 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 170.
+(epstopdf)             \includegraphics on input line 178.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 170.
+put line 178.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [24
+
+]
+File: ./figs//ATT_Angle2.pdf Graphic file (type pdf)
+<use ./figs//ATT_Angle2.pdf>
+Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 178.
+(pdftex.def)             Requested size: 342.2953pt x 111.64305pt.
+File: ./figs//urkLogoWhite.png Graphic file (type png)
+<use ./figs//urkLogoWhite.png>
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 178.
+(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
+
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 178--178
+[][][][][]  
+ []
+
+
+Overfull \vbox (0.60826pt too high) detected at line 178
+ []
+
+Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
+(epstopdf)                    date: 2019-05-09 05:38:28
+(epstopdf)                    size: 1271850 bytes
+(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2021-11-24 09:10:42
+(epstopdf)                    size: 10106 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
+U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
+(epstopdf)             \includegraphics on input line 178.
+Package epstopdf Info: Output file is already uptodate.
+File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
+<use ./figs//footer_SK_STU-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
+put line 178.
+(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
+[25
 
  <./figs//ATT_Angle2.pdf>]
 File: ./figs//ATT_Angle2.pdf Graphic file (type pdf)
 <use ./figs//ATT_Angle2.pdf>
-Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 170.
+Package pdftex.def Info: ./figs//ATT_Angle2.pdf  used on input line 178.
 (pdftex.def)             Requested size: 342.2953pt x 111.64305pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 170.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 178.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 170--170
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 178--178
 [][][][][]  
  []
 
 
-Overfull \vbox (0.60826pt too high) detected at line 170
+Overfull \vbox (0.60826pt too high) detected at line 178
  []
 
 Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
@@ -2496,50 +2520,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 170.
+(epstopdf)             \includegraphics on input line 178.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 170.
-(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[25
-
-]
-File: ./figs//urkLogoWhite.png Graphic file (type png)
-<use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 181.
-(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
-
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 181--181
-[][][][][]  
- []
-
-Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
-(epstopdf)                    date: 2019-05-09 05:38:28
-(epstopdf)                    size: 1271850 bytes
-(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
->
-(epstopdf)                    date: 2021-11-24 09:10:42
-(epstopdf)                    size: 10106 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
-U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 181.
-Package epstopdf Info: Output file is already uptodate.
-File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
-<use ./figs//footer_SK_STU-eps-converted-to.pdf>
-Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 181.
+put line 178.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [26
 
 ]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 181.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 189.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 181--181
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 189--189
 [][][][][]  
  []
 
@@ -2552,22 +2548,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 181.
+(epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 181.
+put line 189.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [27
 
 ]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 181.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 189.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 181--181
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 189--189
 [][][][][]  
  []
 
@@ -2580,22 +2576,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 181.
+(epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 181.
+put line 189.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [28
 
 ]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 181.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 189.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 181--181
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 189--189
 [][][][][]  
  []
 
@@ -2608,32 +2604,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 181.
+(epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 181.
+put line 189.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [29
 
 ]
-<./figs//InputShaping_1.pdf, id=583, 580.16345pt x 125.47176pt>
-File: ./figs//InputShaping_1.pdf Graphic file (type pdf)
-<use ./figs//InputShaping_1.pdf>
-Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 222.
-(pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
-<./figs//InputShaping_2.pdf, id=584, 580.16345pt x 125.47176pt>
-File: ./figs//InputShaping_2.pdf Graphic file (type pdf)
-<use ./figs//InputShaping_2.pdf>
-Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 222.
-(pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 222.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 189.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 222--222
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 189--189
 [][][][][]  
  []
 
@@ -2646,30 +2632,32 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 222.
+(epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 222.
+put line 189.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [30
 
 ]
+<./figs//InputShaping_1.pdf, id=590, 580.16345pt x 125.47176pt>
 File: ./figs//InputShaping_1.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_1.pdf>
-Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
+<./figs//InputShaping_2.pdf, id=591, 580.16345pt x 125.47176pt>
 File: ./figs//InputShaping_2.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_2.pdf>
-Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 222.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 230.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 222--222
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 230--230
 [][][][][]  
  []
 
@@ -2682,30 +2670,66 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 222.
+(epstopdf)             \includegraphics on input line 230.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 222.
+put line 230.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [31
+
+]
+File: ./figs//InputShaping_1.pdf Graphic file (type pdf)
+<use ./figs//InputShaping_1.pdf>
+Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 230.
+(pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
+File: ./figs//InputShaping_2.pdf Graphic file (type pdf)
+<use ./figs//InputShaping_2.pdf>
+Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 230.
+(pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
+File: ./figs//urkLogoWhite.png Graphic file (type png)
+<use ./figs//urkLogoWhite.png>
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 230.
+(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
+
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 230--230
+[][][][][]  
+ []
+
+Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
+(epstopdf)                    date: 2019-05-09 05:38:28
+(epstopdf)                    size: 1271850 bytes
+(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2021-11-24 09:10:42
+(epstopdf)                    size: 10106 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
+U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
+(epstopdf)             \includegraphics on input line 230.
+Package epstopdf Info: Output file is already uptodate.
+File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
+<use ./figs//footer_SK_STU-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
+put line 230.
+(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
+[32
 
  <./figs//InputShaping_1.pdf>]
 File: ./figs//InputShaping_1.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_1.pdf>
-Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//InputShaping_2.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_2.pdf>
-Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 222.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 230.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 222--222
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 230--230
 [][][][][]  
  []
 
@@ -2718,30 +2742,30 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 222.
+(epstopdf)             \includegraphics on input line 230.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 222.
+put line 230.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[32
+[33
 
  <./figs//InputShaping_2.pdf>]
 File: ./figs//InputShaping_1.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_1.pdf>
-Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_1.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//InputShaping_2.pdf Graphic file (type pdf)
 <use ./figs//InputShaping_2.pdf>
-Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 222.
+Package pdftex.def Info: ./figs//InputShaping_2.pdf  used on input line 230.
 (pdftex.def)             Requested size: 342.2953pt x 74.02768pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 222.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 230.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 222--222
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 230--230
 [][][][][]  
  []
 
@@ -2754,50 +2778,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 222.
+(epstopdf)             \includegraphics on input line 230.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 222.
-(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[33
-
-]
-File: ./figs//urkLogoWhite.png Graphic file (type png)
-<use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 234.
-(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
-
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 234--234
-[][][][][]  
- []
-
-Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
-(epstopdf)                    date: 2019-05-09 05:38:28
-(epstopdf)                    size: 1271850 bytes
-(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
->
-(epstopdf)                    date: 2021-11-24 09:10:42
-(epstopdf)                    size: 10106 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
-U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 234.
-Package epstopdf Info: Output file is already uptodate.
-File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
-<use ./figs//footer_SK_STU-eps-converted-to.pdf>
-Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 234.
+put line 230.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [34
 
 ]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 234.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 242.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 234--234
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 242--242
 [][][][][]  
  []
 
@@ -2810,22 +2806,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 234.
+(epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 234.
+put line 242.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [35
 
 ]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 234.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 242.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 234--234
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 242--242
 [][][][][]  
  []
 
@@ -2838,27 +2834,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 234.
+(epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 234.
+put line 242.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [36
 
 ]
-<./figs//PID_HighLevel.pdf, id=699, 727.94058pt x 174.88937pt>
-File: ./figs//PID_HighLevel.pdf Graphic file (type pdf)
-<use ./figs//PID_HighLevel.pdf>
-Package pdftex.def Info: ./figs//PID_HighLevel.pdf  used on input line 250.
-(pdftex.def)             Requested size: 342.2953pt x 82.23537pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 250.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 242.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 250--250
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 242--242
 [][][][][]  
  []
 
@@ -2871,26 +2862,27 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 250.
+(epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 250.
+put line 242.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [37
 
 ]
+<./figs//PID_HighLevel.pdf, id=707, 727.94058pt x 174.88937pt>
 File: ./figs//PID_HighLevel.pdf Graphic file (type pdf)
 <use ./figs//PID_HighLevel.pdf>
-Package pdftex.def Info: ./figs//PID_HighLevel.pdf  used on input line 250.
+Package pdftex.def Info: ./figs//PID_HighLevel.pdf  used on input line 258.
 (pdftex.def)             Requested size: 342.2953pt x 82.23537pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 250.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 258.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 250--250
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 258--258
 [][][][][]  
  []
 
@@ -2903,37 +2895,26 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 250.
+(epstopdf)             \includegraphics on input line 258.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 250.
+put line 258.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [38
 
- <./figs//PID_HighLevel.pdf>]
-<./figs//PositionControl.pdf, id=748, 193.8201pt x 125.47176pt>
-File: ./figs//PositionControl.pdf Graphic file (type pdf)
-<use ./figs//PositionControl.pdf>
-Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 284.
-(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
-<./figs//PositionControl2.pdf, id=749, 193.8201pt x 125.47176pt>
-File: ./figs//PositionControl2.pdf Graphic file (type pdf)
-<use ./figs//PositionControl2.pdf>
-Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 284.
-(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
-<./figs//PositionControl3.pdf, id=750, 193.8201pt x 125.47176pt>
-File: ./figs//PositionControl3.pdf Graphic file (type pdf)
-<use ./figs//PositionControl3.pdf>
-Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 284.
-(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
+]
+File: ./figs//PID_HighLevel.pdf Graphic file (type pdf)
+<use ./figs//PID_HighLevel.pdf>
+Package pdftex.def Info: ./figs//PID_HighLevel.pdf  used on input line 258.
+(pdftex.def)             Requested size: 342.2953pt x 82.23537pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 284.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 258.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 284--284
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 258--258
 [][][][][]  
  []
 
@@ -2946,34 +2927,77 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 284.
+(epstopdf)             \includegraphics on input line 258.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 284.
+put line 258.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
 [39
+
+ <./figs//PID_HighLevel.pdf>]
+<./figs//PositionControl.pdf, id=755, 193.8201pt x 125.47176pt>
+File: ./figs//PositionControl.pdf Graphic file (type pdf)
+<use ./figs//PositionControl.pdf>
+Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 292.
+(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
+<./figs//PositionControl2.pdf, id=756, 193.8201pt x 125.47176pt>
+File: ./figs//PositionControl2.pdf Graphic file (type pdf)
+<use ./figs//PositionControl2.pdf>
+Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 292.
+(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
+<./figs//PositionControl3.pdf, id=757, 193.8201pt x 125.47176pt>
+File: ./figs//PositionControl3.pdf Graphic file (type pdf)
+<use ./figs//PositionControl3.pdf>
+Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 292.
+(pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
+File: ./figs//urkLogoWhite.png Graphic file (type png)
+<use ./figs//urkLogoWhite.png>
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 292.
+(pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
+
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 292--292
+[][][][][]  
+ []
+
+Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
+(epstopdf)                    date: 2019-05-09 05:38:28
+(epstopdf)                    size: 1271850 bytes
+(epstopdf)             Output file: <./figs//footer_SK_STU-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2021-11-24 09:10:42
+(epstopdf)                    size: 10106 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
+U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
+(epstopdf)             \includegraphics on input line 292.
+Package epstopdf Info: Output file is already uptodate.
+File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
+<use ./figs//footer_SK_STU-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
+put line 292.
+(pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
+[40
 
  <./figs//PositionControl.pdf>]
 File: ./figs//PositionControl.pdf Graphic file (type pdf)
 <use ./figs//PositionControl.pdf>
-Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//PositionControl2.pdf Graphic file (type pdf)
 <use ./figs//PositionControl2.pdf>
-Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//PositionControl3.pdf Graphic file (type pdf)
 <use ./figs//PositionControl3.pdf>
-Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 284.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 292.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 284--284
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 292--292
 [][][][][]  
  []
 
@@ -2986,34 +3010,34 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 284.
+(epstopdf)             \includegraphics on input line 292.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 284.
+put line 292.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[40
+[41
 
  <./figs//PositionControl2.pdf>]
 File: ./figs//PositionControl.pdf Graphic file (type pdf)
 <use ./figs//PositionControl.pdf>
-Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//PositionControl2.pdf Graphic file (type pdf)
 <use ./figs//PositionControl2.pdf>
-Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl2.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//PositionControl3.pdf Graphic file (type pdf)
 <use ./figs//PositionControl3.pdf>
-Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 284.
+Package pdftex.def Info: ./figs//PositionControl3.pdf  used on input line 292.
 (pdftex.def)             Requested size: 170.71652pt x 110.51886pt.
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 284.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 292.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 284--284
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 292--292
 [][][][][]  
  []
 
@@ -3026,22 +3050,22 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 284.
+(epstopdf)             \includegraphics on input line 292.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 284.
+put line 292.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[41
+[42
 
  <./figs//PositionControl3.pdf>]
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 298.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 306.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 298--298
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 306--306
 [][][][][]  
  []
 
@@ -3054,14 +3078,14 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 298.
+(epstopdf)             \includegraphics on input line 306.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 298.
+put line 306.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
-[42
+[43
 
 ]
 Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
@@ -3073,29 +3097,29 @@ Package epstopdf Info: Source file: <./figs//footer_SK_STU.eps>
 (epstopdf)                    size: 10106 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=./figs//footer_SK_ST
 U-eps-converted-to.pdf ./figs//footer_SK_STU.eps>
-(epstopdf)             \includegraphics on input line 310.
+(epstopdf)             \includegraphics on input line 318.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figs//footer_SK_STU-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs//footer_SK_STU-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs//footer_SK_STU-eps-converted-to.pdf  used on in
-put line 310.
+put line 318.
 (pdftex.def)             Requested size: 107.17073pt x 7.11317pt.
- [43
+ [44
 
-] [44
+] [45
 
 ]
 \c@framenumberappendix=\count501
 File: ./figs//urkLogoWhite.png Graphic file (type png)
 <use ./figs//urkLogoWhite.png>
-Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 315.
+Package pdftex.def Info: ./figs//urkLogoWhite.png  used on input line 323.
 (pdftex.def)             Requested size: 44.26962pt x 14.22636pt.
 
-Overfull \hbox (4.5736pt too wide) in paragraph at lines 315--315
+Overfull \hbox (4.5736pt too wide) in paragraph at lines 323--323
 [][][][][]  
  []
 
-[45
+[46
 
 ]
 \tf@nav=\write7
@@ -3115,10 +3139,10 @@ Package logreq Info: Writing requests to 'mypresentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41692 strings out of 478870
- 848839 string characters out of 2856225
- 1602488 words of memory out of 3000000
- 58707 multiletter control sequences out of 15000+600000
+ 41711 strings out of 478870
+ 849196 string characters out of 2856225
+ 1602509 words of memory out of 3000000
+ 58724 multiletter control sequences out of 15000+600000
  428148 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,124p,749b,1730s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3145,9 +3169,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/courier/ucrr8a.pfb>
-Output written on mypresentation.pdf (45 pages, 12331557 bytes).
+Output written on mypresentation.pdf (46 pages, 12362992 bytes).
 PDF statistics:
- 1344 PDF objects out of 1440 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1351 PDF objects out of 1440 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
