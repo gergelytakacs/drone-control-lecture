@@ -39,7 +39,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{Online}
       \field{note}{[cited 29.11.2021]; Available from \url{https://ardupilot.org/dev/docs/apmcopter-programming-attitude-control-2.html}}
-      \field{title}{{CCopter Attitude Control}}
+      \field{title}{{Copter Attitude Control}}
       \field{year}{2021}
     \endentry
     \entry{AP:PID}{misc}{}
@@ -80,8 +80,10 @@
       \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{extraname}{1}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -89,6 +91,31 @@
       \field{howpublished}{Online}
       \field{note}{[cited 29.11.2021]; Available from \url{https://docs.px4.io/master/en/flight_stack/controller_diagrams.html}}
       \field{title}{{Controller Diagrams --- Multicopter Control Architecture}}
+      \field{year}{2021}
+    \endentry
+    \entry{PX4:PIDTuning}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
+           family={{PX4 Autopilot}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{fullhash}{8e447a2840db6a861298c4101f122d23}
+      \strng{bibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 30.11.2021]; Available from \url{Multicopter PID Tuning Guide (Advanced/Detailed)}}
+      \field{title}{{Multicopter PID Tuning Guide (Advanced/Detailed)}}
       \field{year}{2021}
     \endentry
     \entry{AP:LogSeminar}{misc}{}

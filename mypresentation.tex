@@ -36,10 +36,11 @@
 \end{frame}
 
 
-\begin{frame}[t]{Rýchlosť zmeny orientácie}
+\begin{frame}[t]{Rýchlosť zmeny uhlov / orientácie}
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
-  \item<2-> Sme na najnižšej úrovni riadenia --- je to zároveň aj najdôležitejšia slučka \citep{AP:PID}
+  \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 3 nezávislých slučiek \citep{AP:PID,PX4:PIDTuning}
+  \item<3->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning})
   \end{itemize}
 
   \begin{onlyenv}<1>
@@ -49,7 +50,7 @@
 \end{figure}
 \end{onlyenv}
 
-  \begin{onlyenv}<2>
+  \begin{onlyenv}<2-3>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate2}\\
@@ -83,32 +84,45 @@
     \item<3-> To je saturácia integračnej zložky \angl{integral windup}.
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
-      \begin{onlyenv}<1->
+      \begin{onlyenv}<1-4>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate4}\\
 \end{figure}
 \end{onlyenv}
 
-\end{frame}
-
-\begin{frame}[t]{Nahromadenie integračnej zložky 2}
-  \begin{itemize}
+      \begin{onlyenv}<5>
+        \begin{itemize}
   \item<1-> ArduPilot - Ak akčný člen je akurát saturovaný, podrž hodnotu I zložky. Nižšie to môže ísť, vyššie nie \citep{AP:PID}.
   \item<2-> ArduPilot - Keďže máme kaskádnu konfiguráciu PID slučiek, saturačný znak postupuje cez hierarchiu nižšie a nižšie aby zastavil nahromadenie I zložky \citep{AP:PID}.
-  \end{itemize}
+            \end{itemize}
+      \end{onlyenv}
+
 \end{frame}
 
-\begin{frame}[t]{Šum a derivačná zložka}
+
+
+\begin{frame}[t]{Šum a kopnutie derivačnej zložky}
   \begin{itemize}
-    \item<1-> aaaaaa
+    \item<1-2> Šum zo snímačov môže propagovať cez výpočet odchýlky riadenia do derivačnej zložky Vysokofrekvenčné zložky potom navýšia D zložku (čo je derivácia impulzu?)
+    \item<2> Riešenie: Odchýlku riadenia pustíme cez dolnopriepustný \angl{low-pass} filter (LPF) --- Aj ArduCopter (20 Hz LPF) aj PX4 Autopilot používa \citep{AP:PID,PX4:PID}
+    \item<3-> Náhle zmeny spôsobia ``kopnutie'' riadenia \angl{derivative kick}. (čo je derivácia impulzu?)
+    \item<4-> Môžeme celkovo obísť zmenu žiadanej hodnoty a tým odchýlky  $e_\Theta(k)$ tak, že derivujeme výstup $y_\Theta(k)$\footnote{Riešenie v PX4, ArduCopter používa input shaping.}
   \end{itemize}
-      \begin{onlyenv}<1->
+      \begin{onlyenv}<1-2>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate5}\\
 \end{figure}
 \end{onlyenv}
+
+\begin{onlyenv}<3->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Rate6}\\
+\end{figure}
+\end{onlyenv}
+
 
 \end{frame}
 
@@ -156,7 +170,6 @@
   \end{frame}
 
 
-<<<<<<< Updated upstream
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
     \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa to zbytočne hromadiť \angl{windup}.
