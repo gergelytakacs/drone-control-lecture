@@ -42,6 +42,32 @@
       \field{title}{{Copter Attitude Control}}
       \field{year}{2021}
     \endentry
+    \entry{Erasmus2020}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=aedcb77af2bcfb8052a42613927e964c}{%
+           family={Erasmus},
+           familyi={E\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{aedcb77af2bcfb8052a42613927e964c}
+      \strng{fullhash}{aedcb77af2bcfb8052a42613927e964c}
+      \strng{bibnamehash}{aedcb77af2bcfb8052a42613927e964c}
+      \strng{authorbibnamehash}{aedcb77af2bcfb8052a42613927e964c}
+      \strng{authornamehash}{aedcb77af2bcfb8052a42613927e964c}
+      \strng{authorfullhash}{aedcb77af2bcfb8052a42613927e964c}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{PX4 Developer Summit Virtual 2020. [cited 1.12.2021]; Available from \url{https://www.youtube.com/watch?v=nEo4WGl4Lgc}}
+      \field{title}{{An In-depth Look at the Multicopter Control System Architecture}}
+      \field{year}{2020}
+    \endentry
     \entry{AP:PID}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=9d6c08741d56d97df43bfdcb6cdcceec}{%
@@ -80,10 +106,8 @@
       \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
-      \field{extraname}{1}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -91,31 +115,6 @@
       \field{howpublished}{Online}
       \field{note}{[cited 29.11.2021]; Available from \url{https://docs.px4.io/master/en/flight_stack/controller_diagrams.html}}
       \field{title}{{Controller Diagrams --- Multicopter Control Architecture}}
-      \field{year}{2021}
-    \endentry
-    \entry{PX4:PIDTuning}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
-           family={{PX4 Autopilot}},
-           familyi={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{8e447a2840db6a861298c4101f122d23}
-      \strng{fullhash}{8e447a2840db6a861298c4101f122d23}
-      \strng{bibnamehash}{8e447a2840db6a861298c4101f122d23}
-      \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
-      \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
-      \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
-      \field{extraname}{2}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradate}{2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Online}
-      \field{note}{[cited 30.11.2021]; Available from \url{Multicopter PID Tuning Guide (Advanced/Detailed)}}
-      \field{title}{{Multicopter PID Tuning Guide (Advanced/Detailed)}}
       \field{year}{2021}
     \endentry
     \entry{AP:LogSeminar}{misc}{}

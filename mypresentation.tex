@@ -36,29 +36,45 @@
 \end{frame}
 
 
-\input{_01_PID_Rate.tex}
+%\input{_01_PID_Rate.tex}
 %\input{_02_PID_Attitude.tex}
 
 
 \begin{frame}
-DCM -> Direction Cosine Matrix (pre 3.2) 
+DCM -> Direction Cosine Matrix (pre 3.2)
 Transformation to inertial to body axes.
 Quaternion 4 by 1
 \end{frame}
 
 
+\begin{frame}[t]{Poloha}
+\begin{itemize}
+  \item<1-> Najnižšia úroveň je riadenie orientácie, tj. uhly $\Omega={\Phi, \Theta, \Sigma}$ a uhlové rýchlosti $\dot\Omega$ v ''body frame``
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}[t]{Orientácia}
 \begin{itemize}
-  \item<1-> Riadiť orientáciu len na základe zmeny rýchlosti by bolo dosť neintuitívne, potrebujeme prepočítať $r_{\Theta} \rightarrow r_{\dot{\Theta}}$
-  \item<2-> Tvárme sa, že poznáme žiadané orientácie, napr. klopenie $r_{\Theta}$.
-  \item<3-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested control}.
-  \item<4-> Nadradené slučky sú pomalšie \citep{AP:PID}, vytvára to istý ``filter'', t.j. nemôžeme rýchlejšie ovládať rýchlosť ako polohu (cca. o rád, min polovicu pomalšie)
+  \item<1-> Riadiť orientáciu \angl{attitude} len na základe zmeny uhl. rýchlosti \angl{rate} by bolo dosť neintuitívne, potrebujeme prepočítať $r_{\Theta} \rightarrow r_{\dot{\Theta}}$
+  \item<2-> Tvárme sa, že poznáme žiadané orientácie, napr. klopenie $r_{\Theta}$ a chceme riadiť $y_{\Theta}$.  V skutočnosti riešené s kvaterniónmy aby sme obišli singularitu Eulerových uhlov pri odhade \citep{Erasmus2020}.
+  \item<3-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested, cascaded}.
   \end{itemize}
 
-  \begin{onlyenv}<3->
+
+    \begin{onlyenv}<1-2>
   \begin{figure}
 \centering
-  \includegraphics[width=\textwidth]{ATT_Angle}\\
+  \includegraphics[width=\textwidth]{PID_HighLevel1a}\\
+\end{figure}
+\end{onlyenv}
+
+
+
+    \begin{onlyenv}<3>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{PID_HighLevel1b}\\
 \end{figure}
 \end{onlyenv}
 
@@ -66,19 +82,23 @@ Quaternion 4 by 1
 
 
 
-    \begin{frame}[t]{Orientácia 2}
+\begin{frame}[t]{Orientácia 2}
 \begin{itemize}
-  \item<1-> Pri PID skôr PI\footnote{ArduCopter a PX4 Autopilot používa P regulátor \citep{PX4:PID,AP:PIDDOC}}, lebo
-  \begin{itemize}
-            \item iba P neodstráni, trvalú odchýlku
-            \item D reaguje príliš agresívne na šum.
-  \end{itemize}
-      \item<2-> Do slučky dopracujeme doprednú väzbu \angl{feedforward} ktorá zrýchli odozvu regulácie
-      \item<3-> ``Whatever works'' - netreba mystifikovať, je to len matematika\footnote{napr. }
+  \item<1-> Nadradené slučky sú pomalšie, vytvára to istý ``filter'', t.j. nemôžeme rýchlejšie ovládať rýchlosť ako polohu (cca. o rád, min polovicu pomalšie\footnote{ArduCopter 40 Hz vs 400 Hz, PX4 250 vs. 1000 Hz \citep{AP:PID,PX4:PID}}) \citep{AP:PID,PX4:PID}
+  \item<2-> Pri PID skôr P\footnote{ArduCopter a PX4 Autopilot používa P regulátor \citep{PX4:PID,AP:PIDDOC}}, lebo reaguje príliš agresívne na šum.
+  \item<3-> Do slučky dopracujeme doprednú väzbu \angl{feedforward} ktorá zrýchli odozvu regulácie. ``Whatever works'' - netreba mystifikovať.
   \end{itemize}
 
 
-  \begin{onlyenv}<2->
+
+  \begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Angle}\\
+\end{figure}
+\end{onlyenv}
+
+  \begin{onlyenv}<3->
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Angle2}\\
@@ -89,6 +109,91 @@ Quaternion 4 by 1
 
 
 
+  \begin{frame}[t]{Orientácia 3}
+\begin{itemize}
+  \item<1-> PX4 používa kvaternióny, ale je to iba P regulátor 
+  \item<2-> ArduCopter v podstate taktiež tam má P regulátor + FF
+\end{itemize}
+
+  \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=100mm]{PX4_Angle}\\
+\end{figure}
+\end{onlyenv}
+
+
+  \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[width=80mm]{AP_Angle}\\
+\end{figure}
+\end{onlyenv}
+
+  \end{frame}
+
+
+
+  \begin{frame}[t]{Zmena súradníc}
+\begin{itemize}
+  \item<1-> aaaa
+\end{itemize}
+
+  \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{PID_HighLevel2}\\
+\end{figure}
+\end{onlyenv}
+
+  \end{frame}
+  
+
+
+  \begin{frame}[t]{Rýchlosť}
+\begin{itemize}
+  \item<1-> aaaa
+\end{itemize}
+
+  \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{PID_HighLevel3}\\
+\end{figure}
+\end{onlyenv}
+
+
+  \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[width=70mm]{PX4_Velocity}\\
+\end{figure}
+\end{onlyenv}
+
+  \end{frame}
+
+
+ \begin{frame}[t]{Poloha}
+\begin{itemize}
+  \item<1-> aaaa
+\end{itemize}
+
+  \begin{onlyenv}<1->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{PID_HighLevel4}\\
+\end{figure}
+\end{onlyenv}
+
+
+  \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[width=50mm]{PX4_Position}\\
+\end{figure}
+\end{onlyenv}
+  \end{frame}
+  
 
 
 
@@ -140,20 +245,6 @@ Quaternion 4 by 1
 \end{frame}
 
 
-\begin{frame}[t]{Poloha}
-\begin{itemize}
-  \item<1-> Najnižšia úroveň je riadenie orientácie, tj. uhly $\Omega={\Phi, \Theta, \Sigma}$ a uhlové rýchlosti $\dot\Omega$ v ''body frame``
-\end{itemize}
-
-  \begin{onlyenv}<2->
-\begin{figure}
-\centering
-  \includegraphics[width=\textwidth]{PID_HighLevel}\\
-\end{figure}
-\end{onlyenv}
-
-
-\end{frame}
 
 
 
@@ -209,10 +300,10 @@ Quaternion 4 by 1
 Notes: \cite{AP:PID}
 
 User (ROS) $\rightarrow$ Shaping $\rightarrow$ PID $\rightarrow$ Actuators
-
+Yaw je prioritizovanych nad Pitch Roll, lebo to drzi dron v lufte \citep{Erasmus2020}
 50 Hz -> 400 Hz
 Min 24 tazsie uchopytelne koncepty pre prezentaciu, dava menej konkretnosti
-
+Velocity prioritizuje vertikalnu rychlost   \citep{Erasmus2020}
 \end{frame}
 
 
