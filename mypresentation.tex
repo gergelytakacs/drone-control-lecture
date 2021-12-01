@@ -111,7 +111,7 @@ Quaternion 4 by 1
 
   \begin{frame}[t]{Orientácia 3}
 \begin{itemize}
-  \item<1-> PX4 používa kvaternióny, ale je to iba P regulátor 
+  \item<1-> PX4 používa kvaternióny, ale je to iba P regulátor
   \item<2-> ArduCopter v podstate taktiež tam má P regulátor + FF
 \end{itemize}
 
@@ -147,7 +147,7 @@ Quaternion 4 by 1
 \end{onlyenv}
 
   \end{frame}
-  
+
 
 
   \begin{frame}[t]{Rýchlosť}
@@ -193,7 +193,7 @@ Quaternion 4 by 1
 \end{figure}
 \end{onlyenv}
   \end{frame}
-  
+
 
 
 
@@ -235,12 +235,13 @@ Quaternion 4 by 1
 \begin{frame}[t]{Inicializácia riadenia}
 \begin{itemize}
   \item<1-> Ako naštartujeme riadenie? Aká je odchýlka $e(0)$ pri štarte?
-  \item<2-> Kritické pri zmene letových módov.
+  \item<2-> Kritické pri zmene letových módov \citep{AP:PID,Bresciani2020}
   \item<3-> Pre ArduCopter \cite{AP:PID}
     \begin{itemize}
     \item Nadradené riadenie poloha vs. rýchlosť (P) --- tak aby vstup bol konštantný
     \item Rýchlosť (PID) --- $e(0)=0$, I zložka s konštantným vstupom, zrátať D pri nastavení žiadanej hodnoty
 \end{itemize}
+
 \end{itemize}
 \end{frame}
 
