@@ -26,7 +26,7 @@
 %viem si predstavit klasika kaskadne riadenie ala arducopter
 %%potom mozno LQR a Integral backstepping a vysvetlit co ma aku vyhodu ...
 
-%\input{_opakovanie.tex}
+\input{_opakovanie.tex}
 
 \begin{frame}{Riadená sústava}
 \begin{figure}
@@ -58,7 +58,7 @@ Quaternion 4 by 1
 
 \begin{frame}[t]{Orientácia}
 \begin{itemize}
-  \item<1-> Tvárme sa, že poznáme žiadané orientácie (napr. RC), napr. klopenie $r_{\Theta}$ a chceme riadiť $y_{\Theta}$.  V skutočnosti riešené s kvaterniónmy aby sme obišli singularitu Eulerových uhlov pri odhade \citep{Erasmus2020}.
+  \item<1-> Tvárme sa, že poznáme žiadané orientácie (napr. RC), napr. klopenie $r_{\Theta}$ a chceme riadiť $y_{\Theta}$.  V skutočnosti riešené s kvaternióny aby sme obišli singularitu Eulerových uhlov pri odhade \citep{Erasmus2020}. Ak by sme priamo pilotovali RC, bol by to tzv. stabilizovaný letový mód \citep{Boland2015}.
   \item<2-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested, cascaded}.
   \end{itemize}
 
@@ -103,7 +103,7 @@ Quaternion 4 by 1
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Angle2}\\
-\end{figure}
+ \end{figure}
 \end{onlyenv}
 
   \end{frame}

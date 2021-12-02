@@ -42,6 +42,38 @@
       \field{title}{{Copter Attitude Control}}
       \field{year}{2021}
     \endentry
+    \entry{Murray2004}{misc}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4d842a025a559e5c2edf98f59c10d29d}{%
+           family={Åström},
+           familyi={Å\bibinitperiod},
+           given={K.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3fa6b96b5d3506325be293be5131cdde}{%
+           family={Murray},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f48d1c019c693caf918619aadf06f8a2}
+      \strng{fullhash}{4334c8cd44f3a936eaccfea1bed54734}
+      \strng{bibnamehash}{4334c8cd44f3a936eaccfea1bed54734}
+      \strng{authorbibnamehash}{4334c8cd44f3a936eaccfea1bed54734}
+      \strng{authornamehash}{f48d1c019c693caf918619aadf06f8a2}
+      \strng{authorfullhash}{4334c8cd44f3a936eaccfea1bed54734}
+      \field{sortinit}{Å}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{[online]}
+      \field{note}{Book preprint, Chapter 8. [cited 26.11.2021]; Available from \url{https://www.cds.caltech.edu/~murray/courses/cds101/fa04/caltech/am04_ch8-3nov04.pdf}}
+      \field{title}{{Analysis and Design of Feedback Systems}}
+      \field{year}{2004}
+    \endentry
     \entry{Boland2015}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b78f2896f0d5ca5e22e14c0900e7d46c}{%
@@ -226,6 +258,29 @@
       \field{howpublished}{Online}
       \field{note}{[cited 10.11.2021]; Available from \url{https://www.youtube.com/watch?v=WcfLTW_qZ08&list=PLC8WVaJJhN4ya_HDxh6qGBT6VbjXR6L5p}}
       \field{title}{{ArduPilot Log Analysis Seminar}}
+      \field{year}{2021}
+    \endentry
+    \entry{W:PID}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9c677286866aad38f8e9b660f5411814}{%
+           family={{Wikipedia}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{[online]}
+      \field{note}{[cited 25.11.2021]; Available from \url{https://en.wikipedia.org/wiki/PID_controller}}
+      \field{title}{{PID controller}}
       \field{year}{2021}
     \endentry
   \enddatalist

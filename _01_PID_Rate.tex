@@ -1,4 +1,4 @@
-\begin{frame}[t]{Rýchlosť zmeny uhlov / orientácie}
+\begin{frame}[t]{Rýchlosť zmeny uhlov}
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
   \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 3 nezávislých slučiek \citep{AP:PID,PX4:PIDTuning}.
@@ -50,12 +50,12 @@
        u_{M2}(k) \\
        u_{M3}(k) \\
        u_{M4}(k)
-     \end{bmatrix}=\begin{bmatrix}
+     \end{bmatrix}=\underbrace{\begin{bmatrix}
                      +1 & -1 & -1 & -1 \\
                      +1 & +1 & +1 & -1 \\
                      +1 & -1 & +1 & +1 \\
                      +1 & +1 & -1 & +1
-                   \end{bmatrix} =
+                   \end{bmatrix}}P =
                 \begin{bmatrix}
                      u_{\tau} \\
        u_{\dot{\Phi}} \\
@@ -63,15 +63,15 @@
        u_{\dot{\Sigma}}
      \end{bmatrix}
      \end{align}
-    \item<2-> Mapa $u(k)=Eu_M(k)$ nemusí obsahovať iba jednotky, môže byť aj neštvorcová ale našťastie transformácia je stále lineárna \citep{Bresciani2020}
-    \item<3-> Ak počet akčných zásahov = počtu akčných členov, používame inverziu ináč napr. Moore-Penroseovu pseudoinverziu
+    \item<2-> Mapa $u_M(k)=Pu(k)$ kde $P$ matica pridelenia riadenia \angl{control allocation matrix}. Nemusí obsahovať iba jednotky, môže byť aj neštvorcová ale našťastie transformácia je stále lineárna \citep{Bresciani2020}.
+    \item<3-> Môžeme priamo namapovať maticu efektivity akčných členov \angl{actuator effectiveness matrix} $B$, kde $P=B^{-1}$. Ak počet akčných zásahov = počtu akčných členov, používame inverziu ináč napr. Moore-Penroseovu pseudoinverziu $P=B^{\dagger}$ \citep{Bresciani2020}.
 \end{itemize}
-    \begin{onlyenv}<1>
-  \begin{figure}
-\centering
-  \includegraphics[width=\textwidth]{ATT_Allocation2}\\
-\end{figure}
-\end{onlyenv}
+%    \begin{onlyenv}<1>
+%  \begin{figure}
+%\centering
+%  \includegraphics[width=\textwidth]{ATT_Allocation2}\\
+%\end{figure}
+%\end{onlyenv}
   \end{frame}
 
 
