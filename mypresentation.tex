@@ -36,7 +36,7 @@
 \end{frame}
 
 
-%\input{_01_PID_Rate.tex}
+\input{_01_PID_Rate.tex}
 %\input{_02_PID_Attitude.tex}
 
 
@@ -47,18 +47,19 @@ Quaternion 4 by 1
 \end{frame}
 
 
-\begin{frame}[t]{Poloha}
+\begin{frame}[t]{Orientácia}
 \begin{itemize}
-  \item<1-> Najnižšia úroveň je riadenie orientácie, tj. uhly $\Omega={\Phi, \Theta, \Sigma}$ a uhlové rýchlosti $\dot\Omega$ v ''body frame``
+  \item<1-> riadenie orientácie, tj. uhly $\Omega={\Phi, \Theta, \Sigma}$ a uhlové rýchlosti $\dot\Omega$ v ''body frame``
+  \item<2-> Pre RC dron by to aj stačilo s plynom $\tau$ \angl{throttle}\footnote{Síce rate-control je tiež možné \citep{Boland2015}!} \citep{Boland2015}
+  \item<3-> Riadiť orientáciu \angl{attitude} len na základe zmeny uhl. rýchlosti \angl{rate} by bolo dosť neintuitívne, potrebujeme prepočítať $r_{\Theta} \rightarrow r_{\dot{\Theta}}$
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}[t]{Orientácia}
 \begin{itemize}
-  \item<1-> Riadiť orientáciu \angl{attitude} len na základe zmeny uhl. rýchlosti \angl{rate} by bolo dosť neintuitívne, potrebujeme prepočítať $r_{\Theta} \rightarrow r_{\dot{\Theta}}$
-  \item<2-> Tvárme sa, že poznáme žiadané orientácie, napr. klopenie $r_{\Theta}$ a chceme riadiť $y_{\Theta}$.  V skutočnosti riešené s kvaterniónmy aby sme obišli singularitu Eulerových uhlov pri odhade \citep{Erasmus2020}.
-  \item<3-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested, cascaded}.
+  \item<1-> Tvárme sa, že poznáme žiadané orientácie (napr. RC), napr. klopenie $r_{\Theta}$ a chceme riadiť $y_{\Theta}$.  V skutočnosti riešené s kvaterniónmy aby sme obišli singularitu Eulerových uhlov pri odhade \citep{Erasmus2020}.
+  \item<2-> Riadenie orientácie môže byť riešené ďalšou, nadradenou regulačnou slučkou - hovoríme o tzv. kaskádnom riadení \angl{nested, cascaded}.
   \end{itemize}
 
 

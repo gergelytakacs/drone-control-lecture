@@ -42,6 +42,64 @@
       \field{title}{{Copter Attitude Control}}
       \field{year}{2021}
     \endentry
+    \entry{Boland2015}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b78f2896f0d5ca5e22e14c0900e7d46c}{%
+           family={Boland},
+           familyi={B\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{fullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{bibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authorbibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authornamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authorfullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 2.12.2021]; Available from \url{https://www.youtube.com/watch?v=CHSYgLfhwUo&t=3s}}
+      \field{title}{Embedded Programming for Quadcopters}
+      \field{year}{2015}
+    \endentry
+    \entry{Bresciani2020}{misc}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1bbd0cabf7324f5d67931f050e133afb}{%
+           family={Bresciani},
+           familyi={B\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fad35a3a25737252137da8d486bf092e}{%
+           family={Grob},
+           familyi={G\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{64e7372e3b8f2bd506aa4afa562ff0cc}
+      \strng{fullhash}{ce9d0ea0b7ebc4121bde37e1c01dd8f5}
+      \strng{bibnamehash}{ce9d0ea0b7ebc4121bde37e1c01dd8f5}
+      \strng{authorbibnamehash}{ce9d0ea0b7ebc4121bde37e1c01dd8f5}
+      \strng{authornamehash}{64e7372e3b8f2bd506aa4afa562ff0cc}
+      \strng{authorfullhash}{ce9d0ea0b7ebc4121bde37e1c01dd8f5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{PX4 Developer Summit Virtual 2020. [cited 1.12.2021]; Available from \url{https://www.youtube.com/watch?v=orvng_11ngQ}}
+      \field{title}{{Overview of multicopter control from sensors to motors}}
+      \field{year}{2020}
+    \endentry
     \entry{Erasmus2020}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=aedcb77af2bcfb8052a42613927e964c}{%
@@ -106,8 +164,10 @@
       \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
       \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{extraname}{1}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -115,6 +175,31 @@
       \field{howpublished}{Online}
       \field{note}{[cited 29.11.2021]; Available from \url{https://docs.px4.io/master/en/flight_stack/controller_diagrams.html}}
       \field{title}{{Controller Diagrams --- Multicopter Control Architecture}}
+      \field{year}{2021}
+    \endentry
+    \entry{PX4:PIDTuning}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
+           family={{PX4 Autopilot}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{fullhash}{8e447a2840db6a861298c4101f122d23}
+      \strng{bibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 30.11.2021]; Available from \url{Multicopter PID Tuning Guide (Advanced/Detailed)}}
+      \field{title}{{Multicopter PID Tuning Guide (Advanced/Detailed)}}
       \field{year}{2021}
     \endentry
     \entry{AP:LogSeminar}{misc}{}

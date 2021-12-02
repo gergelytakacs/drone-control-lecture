@@ -1,7 +1,7 @@
 \begin{frame}[t]{Rýchlosť zmeny uhlov / orientácie}
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
-  \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 3 nezávislých slučiek \citep{AP:PID,PX4:PIDTuning}. 
+  \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 3 nezávislých slučiek \citep{AP:PID,PX4:PIDTuning}.
   \item<3->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning}) Meranie je komplexný problém sám v sebe, napr. low-pass gyro + notch \citep{Bresciani2020} alebo odhad
   \end{itemize}
 
@@ -18,8 +18,63 @@
   \includegraphics[width=\textwidth]{ATT_Rate2}\\
 \end{figure}
 \end{onlyenv}
-
   \end{frame}
+
+
+
+  \begin{frame}{Pridelenie akčných zásahov}
+  \begin{itemize}
+    \item<1-> Aj keď slučky PID na tejto úrovni definujú žiadanú zmenu $u(k)$, musíme implementovať pridelenie riadenia \angl{control allocation} $u_M(k)$ (PWM, RC impulzy) do individuálnych motorov cez elektronické riadenie rýchlosti \angl{electronic speed control, ESC}.
+     \item<2-> V najjednoduchšom prípade máme mapujeme pre každý motor 1-4 (alebo viac)
+    \begin{align}
+     u_{M1}(k) &= u_{\tau}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M2}(k) &= u_{\tau}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M3}(k) &= u_{\tau}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
+     u_{M4}(k) &= u_{\tau}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
+     \end{align}
+\end{itemize}
+    \begin{onlyenv}<1>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Allocation}\\
+\end{figure}
+\end{onlyenv}
+  \end{frame}
+
+   \begin{frame}{Pridelenie akčných zásahov 2}
+  \begin{itemize}
+  \item<1->
+        \begin{align}
+     \begin{bmatrix}
+       u_{M1}(k) \\
+       u_{M2}(k) \\
+       u_{M3}(k) \\
+       u_{M4}(k)
+     \end{bmatrix}=\begin{bmatrix}
+                     +1 & -1 & -1 & -1 \\
+                     +1 & +1 & +1 & -1 \\
+                     +1 & -1 & +1 & +1 \\
+                     +1 & +1 & -1 & +1
+                   \end{bmatrix} =
+                \begin{bmatrix}
+                     u_{\tau} \\
+       u_{\dot{\Phi}} \\
+       u_{\dot{\Theta}} \\
+       u_{\dot{\Sigma}}
+     \end{bmatrix}
+     \end{align}
+    \item<2-> Mapa $u(k)=Eu_M(k)$ nemusí obsahovať iba jednotky, môže byť aj neštvorcová ale našťastie transformácia je stále lineárna \citep{Bresciani2020}
+    \item<3-> Ak počet akčných zásahov = počtu akčných členov, používame inverziu ináč napr. Moore-Penroseovu pseudoinverziu
+\end{itemize}
+    \begin{onlyenv}<1>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{ATT_Allocation2}\\
+\end{figure}
+\end{onlyenv}
+  \end{frame}
+
+
 
 \begin{frame}[t]{Ohraničenie vstupov}
   \begin{itemize}
