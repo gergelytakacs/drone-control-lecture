@@ -1,3 +1,15 @@
+\begin{frame}{Riadená sústava}
+\begin{itemize}
+  \item<1-> Nestabilná \angl{unstable} - duh...
+  \item<2-> Nelineárna \angl{nonlinear} - uhly, atď.
+  \item<3-> \angl{underactuated} - 4 vstupy, 6 DOF výstup \citep{Douglas2018}
+\end{itemize}
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{rollpitch}\\
+\end{figure}
+\end{frame}
+
 \begin{frame}[t]{Rýchlosť zmeny uhlov}
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
@@ -27,16 +39,22 @@
     \item<1-> Aj keď slučky PID na tejto úrovni definujú žiadanú zmenu $u(k)$, musíme implementovať pridelenie riadenia \angl{control allocation} $u_M(k)$ (PWM, RC impulzy) do individuálnych motorov cez elektronické riadenie rýchlosti \angl{electronic speed control, ESC}.
      \item<2-> V najjednoduchšom prípade máme mapujeme pre každý motor 1-4 (alebo viac)
     \begin{align}
-     u_{M1}(k) &= u_{\tau}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
-     u_{M2}(k) &= u_{\tau}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
-     u_{M3}(k) &= u_{\tau}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
-     u_{M4}(k) &= u_{\tau}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
+     u_{M1}(k) &= u_{\tau}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
+     u_{M2}(k) &= u_{\tau}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M3}(k) &= u_{\tau}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M4}(k) &= u_{\tau}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
      \end{align}
 \end{itemize}
     \begin{onlyenv}<1>
   \begin{figure}
 \centering
-  \includegraphics[width=\textwidth]{ATT_Allocation}\\
+  \includegraphics[height=20mm]{ATT_Allocation}\\
+\end{figure}
+\end{onlyenv}
+    \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[height=20mm]{ATT_Allocation2}\\
 \end{figure}
 \end{onlyenv}
   \end{frame}
@@ -51,10 +69,10 @@
        u_{M3}(k) \\
        u_{M4}(k)
      \end{bmatrix}=\underbrace{\begin{bmatrix}
-                     +1 & -1 & -1 & -1 \\
-                     +1 & +1 & +1 & -1 \\
-                     +1 & -1 & +1 & +1 \\
-                     +1 & +1 & -1 & +1
+                     +1 & +1 & +1 & +1 \\
+                     +1 & -1 & +1 & -1 \\
+                     +1 & +1 & -1 & -1 \\
+                     +1 & -1 & -1 & +1
                    \end{bmatrix}}P =
                 \begin{bmatrix}
                      u_{\tau} \\
@@ -63,6 +81,7 @@
        u_{\dot{\Sigma}}
      \end{bmatrix}
      \end{align}
+     
     \item<2-> Mapa $u_M(k)=Pu(k)$ kde $P$ matica pridelenia riadenia \angl{control allocation matrix}. Nemusí obsahovať iba jednotky, môže byť aj neštvorcová ale našťastie transformácia je stále lineárna \citep{Bresciani2020}.
     \item<3-> Môžeme priamo namapovať maticu efektivity akčných členov \angl{actuator effectiveness matrix} $B$, kde $P=B^{-1}$. Ak počet akčných zásahov = počtu akčných členov, používame inverziu ináč napr. Moore-Penroseovu pseudoinverziu $P=B^{\dagger}$ \citep{Bresciani2020}.
 \end{itemize}
@@ -143,10 +162,20 @@
 
 \end{frame}
 
-\begin{frame}{Ako to funguje v PX4?}
+\begin{frame}{Ako to funguje v ``reálne''?}
+\begin{onlyenv}<1>
   \begin{figure}
 \centering
   \includegraphics[width=100mm]{PX4_Rate}\\
 \end{figure}
+\end{onlyenv}
+
+\begin{onlyenv}<1>
+  \begin{figure}
+\centering
+  \includegraphics[width=100mm]{AP_Stabilize}\\
+\end{figure}
+\end{onlyenv}
+
 
 \end{frame} 

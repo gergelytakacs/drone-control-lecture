@@ -19,76 +19,51 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{AP:PIDDOC}{misc}{}
+    \entry{Bequette2010}{book}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=1f79341042063f30812f2942a48d19ed}{%
-           family={{ArduPilot}},
-           familyi={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{1f79341042063f30812f2942a48d19ed}
-      \strng{fullhash}{1f79341042063f30812f2942a48d19ed}
-      \strng{bibnamehash}{1f79341042063f30812f2942a48d19ed}
-      \strng{authorbibnamehash}{1f79341042063f30812f2942a48d19ed}
-      \strng{authornamehash}{1f79341042063f30812f2942a48d19ed}
-      \strng{authorfullhash}{1f79341042063f30812f2942a48d19ed}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Online}
-      \field{note}{[cited 29.11.2021]; Available from \url{https://ardupilot.org/dev/docs/apmcopter-programming-attitude-control-2.html}}
-      \field{title}{{Copter Attitude Control}}
-      \field{year}{2021}
-    \endentry
-    \entry{Murray2004}{misc}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=4d842a025a559e5c2edf98f59c10d29d}{%
-           family={Åström},
-           familyi={Å\bibinitperiod},
-           given={K.\bibnamedelimi J.},
-           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3fa6b96b5d3506325be293be5131cdde}{%
-           family={Murray},
-           familyi={M\bibinitperiod},
-           given={R.\bibnamedelimi M.},
-           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{f48d1c019c693caf918619aadf06f8a2}
-      \strng{fullhash}{4334c8cd44f3a936eaccfea1bed54734}
-      \strng{bibnamehash}{4334c8cd44f3a936eaccfea1bed54734}
-      \strng{authorbibnamehash}{4334c8cd44f3a936eaccfea1bed54734}
-      \strng{authornamehash}{f48d1c019c693caf918619aadf06f8a2}
-      \strng{authorfullhash}{4334c8cd44f3a936eaccfea1bed54734}
-      \field{sortinit}{Å}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{[online]}
-      \field{note}{Book preprint, Chapter 8. [cited 26.11.2021]; Available from \url{https://www.cds.caltech.edu/~murray/courses/cds101/fa04/caltech/am04_ch8-3nov04.pdf}}
-      \field{title}{{Analysis and Design of Feedback Systems}}
-      \field{year}{2004}
-    \endentry
-    \entry{Boland2015}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=b78f2896f0d5ca5e22e14c0900e7d46c}{%
-           family={Boland},
+        {{un=0,uniquepart=base,hash=88f068c4ff692580bdf85fc5c350d7b7}{%
+           family={Bequette},
            familyi={B\bibinitperiod},
-           given={Ryan},
-           giveni={R\bibinitperiod},
+           given={B.\bibnamedelimi W.},
+           giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
-      \strng{fullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
-      \strng{bibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
-      \strng{authorbibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
-      \strng{authornamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
-      \strng{authorfullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \list{publisher}{1}{%
+        {Prentice Hall PTR}%
+      }
+      \strng{namehash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \strng{fullhash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \strng{bibnamehash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \strng{authorbibnamehash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \strng{authornamehash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \strng{authorfullhash}{88f068c4ff692580bdf85fc5c350d7b7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Process Control: Modeling, Design, and Simulation}
+      \field{year}{2010}
+    \endentry
+    \entry{Bolton2018}{misc}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1e5afa7db157583d1f6860d14f5f01e0}{%
+           family={Bolton},
+           familyi={B\bibinitperiod},
+           given={Barry},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19a4d99de12cf85bcde96fbcaf77a2f0}{%
+           family={{PX4 Dev Team}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c8ea167b5f907ad73fbd1dfed443d934}
+      \strng{fullhash}{ab3617f69515cf150ae4b61a51177c59}
+      \strng{bibnamehash}{ab3617f69515cf150ae4b61a51177c59}
+      \strng{authorbibnamehash}{ab3617f69515cf150ae4b61a51177c59}
+      \strng{authornamehash}{c8ea167b5f907ad73fbd1dfed443d934}
+      \strng{authorfullhash}{ab3617f69515cf150ae4b61a51177c59}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -96,9 +71,9 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Online}
-      \field{note}{[cited 2.12.2021]; Available from \url{https://www.youtube.com/watch?v=CHSYgLfhwUo&t=3s}}
-      \field{title}{Embedded Programming for Quadcopters}
-      \field{year}{2015}
+      \field{note}{PX4 GitHub [cited 3.12.2021]; Available from \url{https://github.com/PX4/PX4-Autopilot/issues/8472}}
+      \field{title}{Feature Request: AutoTune}
+      \field{year}{2018}
     \endentry
     \entry{Bresciani2020}{misc}{}
       \name{author}{2}{}{%
@@ -131,6 +106,32 @@
       \field{note}{PX4 Developer Summit Virtual 2020. [cited 1.12.2021]; Available from \url{https://www.youtube.com/watch?v=orvng_11ngQ}}
       \field{title}{{Overview of multicopter control from sensors to motors}}
       \field{year}{2020}
+    \endentry
+    \entry{Douglas2018}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=68ce159d58f02caea22b39c3f5673b00}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{68ce159d58f02caea22b39c3f5673b00}
+      \strng{fullhash}{68ce159d58f02caea22b39c3f5673b00}
+      \strng{bibnamehash}{68ce159d58f02caea22b39c3f5673b00}
+      \strng{authorbibnamehash}{68ce159d58f02caea22b39c3f5673b00}
+      \strng{authornamehash}{68ce159d58f02caea22b39c3f5673b00}
+      \strng{authorfullhash}{68ce159d58f02caea22b39c3f5673b00}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{From the series Matlab Tech Talks [cited 3.12.2021]; Available from \url{https://www.mathworks.com/videos/series/drone-simulation-and-control.html}}
+      \field{title}{Drone Simulation and Control}
+      \field{year}{2018}
     \endentry
     \entry{Erasmus2020}{misc}{}
       \name{author}{1}{}{%
@@ -184,6 +185,88 @@
       \field{title}{{Pratical PID implementation and the new Position Controller}}
       \field{year}{2018}
     \endentry
+    \entry{Hambali2014}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=79a1effbfdb9c2adc936ee11f6c8323e}{%
+           family={Hambali},
+           familyi={H\bibinitperiod},
+           given={Najidah},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0bdc88faa0f0044beef2f6084fe53cc7}{%
+           family={Masngut},
+           familyi={M\bibinitperiod},
+           given={Afandi},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1abf873d3f04504078398b743387ddd2}{%
+           family={Ishak},
+           familyi={I\bibinitperiod},
+           given={Abdul\bibnamedelima Aziz},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c627a6687e1b37f9ce7e30724e9b97de}{%
+           family={Janin},
+           familyi={J\bibinitperiod},
+           given={Zuriati},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b4550ab54e1b542659ff24f438330c77}
+      \strng{fullhash}{c612706bc2b7a6802fff6af51aeed336}
+      \strng{bibnamehash}{b4550ab54e1b542659ff24f438330c77}
+      \strng{authorbibnamehash}{b4550ab54e1b542659ff24f438330c77}
+      \strng{authornamehash}{b4550ab54e1b542659ff24f438330c77}
+      \strng{authorfullhash}{c612706bc2b7a6802fff6af51aeed336}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE International Conference on Smart Instrumentation, Measurement and Applications (ICSIMA)}
+      \field{title}{Process controllability for flow control system using Ziegler-Nichols (ZN), Cohen-Coon (CC) and Chien-Hrones-Reswick (CHR) tuning methods}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICSIMA.2014.7047432
+      \endverb
+    \endentry
+    \entry{Joseph2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=77de4a1fc7e42824da8122cac54262f7}{%
+           family={Joseph},
+           familyi={J\bibinitperiod},
+           given={Elisha},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ad3bdf5c0e54957576159ab29bd27f7}{%
+           family={OlaiyaO.},
+           familyi={O\bibinitperiod},
+           given={O},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2205236b6b31e25e0d5772b6690b8883}
+      \strng{fullhash}{95cc9b5f2fe67a6ef9694c4aefd2e7a2}
+      \strng{bibnamehash}{95cc9b5f2fe67a6ef9694c4aefd2e7a2}
+      \strng{authorbibnamehash}{95cc9b5f2fe67a6ef9694c4aefd2e7a2}
+      \strng{authornamehash}{2205236b6b31e25e0d5772b6690b8883}
+      \strng{authorfullhash}{95cc9b5f2fe67a6ef9694c4aefd2e7a2}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Engineering and Intelligent Systems}
+      \field{title}{Cohen-Coon PID Tuning Method: A Better Option to Ziegler Nichols-Pid Tuning Method}
+      \field{volume}{9}
+      \field{year}{2018}
+      \field{pages}{33\bibrangedash 37}
+      \range{pages}{5}
+    \endentry
     \entry{PX4:PID}{misc}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
@@ -230,7 +313,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Online}
-      \field{note}{[cited 30.11.2021]; Available from \url{Multicopter PID Tuning Guide (Advanced/Detailed)}}
+      \field{note}{[cited 30.11.2021]; Available from \url{https://docs.px4.io/master/en/config/autotune.html)}}
       \field{title}{{Multicopter PID Tuning Guide (Advanced/Detailed)}}
       \field{year}{2021}
     \endentry
@@ -260,28 +343,40 @@
       \field{title}{{ArduPilot Log Analysis Seminar}}
       \field{year}{2021}
     \endentry
-    \entry{W:PID}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=9c677286866aad38f8e9b660f5411814}{%
-           family={{Wikipedia}},
-           familyi={W\bibinitperiod}}}%
+    \entry{Ziegler1942}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3eb7b00b51845616ebc58740176275b5}{%
+           family={Ziegler},
+           familyi={Z\bibinitperiod},
+           given={J.\bibnamedelimi G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a01bd6b3117ae859386ed57943be6160}{%
+           family={Nichols},
+           familyi={N\bibinitperiod},
+           given={N.\bibnamedelimi B.},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \strng{namehash}{2bea5d5d56a53d6390495acaa1cfa366}
+      \strng{fullhash}{0863fb74555560f1272ce9205afca419}
+      \strng{bibnamehash}{0863fb74555560f1272ce9205afca419}
+      \strng{authorbibnamehash}{0863fb74555560f1272ce9205afca419}
+      \strng{authornamehash}{2bea5d5d56a53d6390495acaa1cfa366}
+      \strng{authorfullhash}{0863fb74555560f1272ce9205afca419}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{[online]}
-      \field{note}{[cited 25.11.2021]; Available from \url{https://en.wikipedia.org/wiki/PID_controller}}
-      \field{title}{{PID controller}}
-      \field{year}{2021}
+      \field{journaltitle}{Transactions of the ASME}
+      \field{number}{-}
+      \field{title}{Optimum settings for automatic controllers}
+      \field{volume}{64}
+      \field{year}{1942}
+      \field{pages}{759\bibrangedash 768}
+      \range{pages}{10}
     \endentry
   \enddatalist
 \endrefsection
