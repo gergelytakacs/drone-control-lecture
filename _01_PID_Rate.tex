@@ -12,9 +12,10 @@
 
 \begin{frame}[t]{Rýchlosť zmeny uhlov}
 \begin{itemize}
-  \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
-  \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 3 nezávislých slučiek \citep{AP:PID,PX4:PIDTuning}.
-  \item<3->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning}) Meranie je komplexný problém sám v sebe, napr. low-pass gyro + notch \citep{Bresciani2020} alebo odhad
+  \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ resp $r_{\dot{h}}$ (vert. rýchlosť) a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
+  \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 4 slučky \citep{AP:PID,PX4:PIDTuning}.
+  \item<3-> Slučky sú nezávislé len pre malé uhly, lebo keď zvýšime letovú výšku $h$ pri väčších e.g. $\Theta$ tak zvýšime aj vertikálnu aj horizontálnu rýchlosť \citep{Douglas2018}!
+  \item<4->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning}) Meranie je komplexný problém sám v sebe, napr. low-pass gyro + notch \citep{Bresciani2020} alebo odhad
   \end{itemize}
 
   \begin{onlyenv}<1>
@@ -39,10 +40,10 @@
     \item<1-> Aj keď slučky PID na tejto úrovni definujú žiadanú zmenu $u(k)$, musíme implementovať pridelenie riadenia \angl{control allocation} $u_M(k)$ (PWM, RC impulzy) do individuálnych motorov cez elektronické riadenie rýchlosti \angl{electronic speed control, ESC}.
      \item<2-> V najjednoduchšom prípade máme mapujeme pre každý motor 1-4 (alebo viac)
     \begin{align}
-     u_{M1}(k) &= u_{\tau}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
-     u_{M2}(k) &= u_{\tau}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
-     u_{M3}(k) &= u_{\tau}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
-     u_{M4}(k) &= u_{\tau}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
+     u_{M1}(k) &= u_{\dot{h}}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
+     u_{M2}(k) &= u_{\dot{h}}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M3}(k) &= u_{\dot{h}}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
+     u_{M4}(k) &= u_{\dot{h}}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
      \end{align}
 \end{itemize}
     \begin{onlyenv}<1>
@@ -75,13 +76,13 @@
                      +1 & -1 & -1 & +1
                    \end{bmatrix}}P =
                 \begin{bmatrix}
-                     u_{\tau} \\
+                     u_{\dot{h}} \\
        u_{\dot{\Phi}} \\
        u_{\dot{\Theta}} \\
        u_{\dot{\Sigma}}
      \end{bmatrix}
      \end{align}
-     
+
     \item<2-> Mapa $u_M(k)=Pu(k)$ kde $P$ matica pridelenia riadenia \angl{control allocation matrix}. Nemusí obsahovať iba jednotky, môže byť aj neštvorcová ale našťastie transformácia je stále lineárna \citep{Bresciani2020}.
     \item<3-> Môžeme priamo namapovať maticu efektivity akčných členov \angl{actuator effectiveness matrix} $B$, kde $P=B^{-1}$. Ak počet akčných zásahov = počtu akčných členov, používame inverziu ináč napr. Moore-Penroseovu pseudoinverziu $P=B^{\dagger}$ \citep{Bresciani2020}.
 \end{itemize}
