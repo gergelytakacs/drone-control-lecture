@@ -1,13 +1,31 @@
+%
+%\begin{frame}
+%DCM -> Direction Cosine Matrix (pre 3.2)
+%Transformation to inertial to body axes.
+%Quaternion 4 by 1
+%\end{frame}
+%
 
-\begin{frame}
-DCM -> Direction Cosine Matrix (pre 3.2)
-Transformation to inertial to body axes.
-Quaternion 4 by 1
+  \begin{frame}[t]{Referencia na základe globálnej polohy}
+\begin{itemize}
+  \item<1-> Úlohou je držať polohu na základe globálnych súradníc (GS) napr. GPS
+  \item<2-> Klopenie a klonenie určíme na základe GS súradníc, t.j. premeníme $X,Y\rightarrow\Theta,\Phi$...
+    \item<3->  ...   ale potrebujeme na výpočet aj želané/aktuálne vybočenie, t.j. $X,Y,\Psi\rightarrow\Theta,\Phi$,
+\end{itemize}
+  \begin{onlyenv}<1>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{POS_Overall1}\\
+\end{figure}
+\end{onlyenv}
+  \begin{onlyenv}<2->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{POS_Overall2}\\
+\end{figure}
+\end{onlyenv}
+
 \end{frame}
-
-
-
-
 
   \begin{frame}[t]{Zmena súradníc}
 \begin{itemize}
