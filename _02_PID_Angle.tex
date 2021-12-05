@@ -85,13 +85,14 @@
 \end{onlyenv}
 
   \end{frame}
-  
+
 \begin{frame}[t]{Orientácia: Problém stabilizácie}\
 \begin{itemize}
   \item<1-> Máme 4 nezávislých slučiek
-  \item<2-> Čo sa stane ak chceme dron stabilizovať? Majme 0-vé Eulerove uhly!
-  \item<3-> Určite to drží na jednom mieste? 
-  \item<4-> Potrebujeme nenulové klopenie a klonenie, a referenciu na základe polohy!
+  \item<2-> Ako to vyzerá v MATLAB príklade?
+  \item<3-> Čo sa stane ak chceme dron stabilizovať? Majme 0-vé Eulerove uhly!
+  \item<4-> Určite to drží na jednom mieste?
+  \item<5-> Potrebujeme nenulové klopenie a klonenie, a referenciu na základe polohy!
 \end{itemize}
   \begin{onlyenv}<1>
 \begin{figure}
@@ -99,23 +100,32 @@
   \includegraphics[width=\textwidth]{ATT_Overall1}\\
 \end{figure}
   \end{onlyenv}
+  
     \begin{onlyenv}<2>
+\begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{MS_QuadExample_AllRate}\\
+\end{figure}
+  \end{onlyenv}
+  
+  
+    \begin{onlyenv}<3>
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Overall2}\\
 \end{figure}
   \end{onlyenv}
-      \begin{onlyenv}<3>
+      \begin{onlyenv}<4>
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Overall3}\\
 \end{figure}
   \end{onlyenv}
-        \begin{onlyenv}<4>
+        \begin{onlyenv}<5>
 \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Overall4}\\
 \end{figure}
   \end{onlyenv}
-  
+
 \end{frame}
