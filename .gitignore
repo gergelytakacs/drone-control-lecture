@@ -1,7 +1,13 @@
-# ignore all files produced by LaTeX
 *.log
 *.synctex
 *.aux
 *.bbl
 *.blg
+*.bcf
+*.nav
+*.out
+*.snm
+*.toc
+*.xml
+*.vrb
 

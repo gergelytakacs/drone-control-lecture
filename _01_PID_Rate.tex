@@ -1,12 +1,12 @@
 \begin{frame}{Riadená sústava}
 \begin{itemize}
   \item<1-> Nestabilná \angl{unstable} - duh...
-  \item<2-> Nelineárna \angl{nonlinear} - uhly, atď.
-  \item<3-> \angl{underactuated} - 4 vstupy, 6 DOF výstup \citep{Douglas2018}
+  \item<2-> Nelineárna \angl{nonlinear} - uhly, aerodynamika, atď.
+  \item<3-> Nedostatočne riadený \angl{underactuated} - 4 vstupy, 6 DOF výstup --- 3$\times$ posunutie a 3$\times$ otočenie \citep{Douglas2018}
 \end{itemize}
 \begin{figure}
 \centering
-  \includegraphics[width=60mm]{rollpitch}\\
+  \includegraphics[width=70mm]{rollpitch}\\
 \end{figure}
 \end{frame}
 
@@ -14,55 +14,58 @@
 \begin{itemize}
   \item<1-> Tvárme sa, že poznáme žiadanú uhlovú rýchlosť orientácie $r_{\dot{\Theta}}$, $r_{\dot{\Phi}}$ a $r_{\dot{\Psi}}$ resp $r_{\dot{h}}$ (vert. rýchlosť) a pre jednoduchosť sústredme len na rýchlosť zmeny klopenia ($\dot{\Theta}$).
   \item<2-> Sme na najnižšej úrovni, t.j. riadenie uhlovej rýchlosti \angl{rate controller} --- je to zároveň aj najdôležitejšia slučka, a máme 4 slučky \citep{AP:PID,PX4:PIDTuning}.
-  \item<3-> Slučky sú nezávislé len pre malé uhly, lebo keď zvýšime letovú výšku $h$ pri väčších e.g. $\Theta$ tak zvýšime aj vertikálnu aj horizontálnu rýchlosť \citep{Douglas2018}!
-  \item<4->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning}) Meranie je komplexný problém sám v sebe, napr. low-pass gyro + notch \citep{Bresciani2020} alebo odhad
   \end{itemize}
 
-  \begin{onlyenv}<1>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate}\\
 \end{figure}
-\end{onlyenv}
+  \end{frame}
 
-  \begin{onlyenv}<2-3>
+ 
+\begin{frame}[t]{Rýchlosť zmeny uhlov (pokr.)}
+\begin{itemize}
+  \item<1-> Slučky sú nezávislé len pre malé uhly, lebo keď zvýšime letovú výšku $h$ pri väčších e.g. $\Theta$ tak zvýšime aj vertikálnu aj horizontálnu rýchlosť \citep{Douglas2018}!
+  \item<2->  Je to aj najrýchlejšia slučka (cca. $f_s$=400--1000 Hz \citep{AP:PID,PX4:PIDTuning}) Meranie je komplexný problém sám v sebe, napr. low-pass gyro + notch \citep{Bresciani2020} alebo odhad
+  \end{itemize}
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate2}\\
 \end{figure}
-\end{onlyenv}
   \end{frame}
-
 
 
   \begin{frame}{Pridelenie akčných zásahov}
   \begin{itemize}
     \item<1-> Aj keď slučky PID na tejto úrovni definujú žiadanú zmenu $u(k)$, musíme implementovať pridelenie riadenia \angl{control allocation} $u_M(k)$ (PWM, RC impulzy) do individuálnych motorov cez elektronické riadenie rýchlosti \angl{electronic speed control, ESC}.
      \item<2-> V najjednoduchšom prípade máme mapujeme pre každý motor 1-4 (alebo viac)
+      {\scriptsize
     \begin{align}
      u_{M1}(k) &= u_{\dot{h}}  + u_{\dot{\Phi}} + u_{\dot{\Theta}}  + u_{\dot{\Sigma}}\\
      u_{M2}(k) &= u_{\dot{h}}  - u_{\dot{\Phi}} + u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
      u_{M3}(k) &= u_{\dot{h}}  + u_{\dot{\Phi}} - u_{\dot{\Theta}}  - u_{\dot{\Sigma}}\\
      u_{M4}(k) &= u_{\dot{h}}  - u_{\dot{\Phi}} - u_{\dot{\Theta}}  + u_{\dot{\Sigma}}
      \end{align}
+     }
 \end{itemize}
     \begin{onlyenv}<1>
   \begin{figure}
 \centering
-  \includegraphics[height=20mm]{ATT_Allocation}\\
+  \includegraphics[width=\textwidth]{ATT_Allocation}\\
 \end{figure}
 \end{onlyenv}
     \begin{onlyenv}<2->
   \begin{figure}
 \centering
-  \includegraphics[height=20mm]{ATT_Allocation2}\\
+  \includegraphics[height=30mm]{ATT_Allocation2}\\
 \end{figure}
 \end{onlyenv}
   \end{frame}
 
    \begin{frame}{Pridelenie akčných zásahov 2}
   \begin{itemize}
-  \item<1->
+  \item<1-> z čoho v maticovej forme
+
         \begin{align}
      \begin{bmatrix}
        u_{M1}(k) \\
@@ -74,7 +77,7 @@
                      +1 & -1 & +1 & -1 \\
                      +1 & +1 & -1 & -1 \\
                      +1 & -1 & -1 & +1
-                   \end{bmatrix}}P =
+                   \end{bmatrix}}_P =
                 \begin{bmatrix}
                      u_{\dot{h}} \\
        u_{\dot{\Phi}} \\
@@ -98,7 +101,7 @@
 
 \begin{frame}[t]{Ohraničenie vstupov}
   \begin{itemize}
-    \item<1-> Akčné zásahy majú svoje ohraničenia (\angl{constraints})
+    \item<1-> Akčné zásahy majú svoje ohraničenia \angl{constraints}
     \item<2-> Ako donútime ich dodržanie? Saturáciou (orezávaním) hodnôt, ktoré skutočne vypočíta PID.
     \item<3-> Saturácia vnáša nelinearitu, vplýva na výkon riadenia aj stabilitu.
     \item<4-> Aj iné veličiny môžeme saturovať, napr. žiadané hodnoty. Ako by sme ohraničili výstup?
@@ -115,10 +118,10 @@
 
 \begin{frame}[t]{Nahromadenie integračnej zložky}
   \begin{itemize}
-    \item<1-> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa nahromaďovať \angl{windup}.
+    \item<1-3> Integračná zložka ráta odchýlku v minulosti, preto ak akčné členy sú už na hraniciach možností - začína sa nahromaďovať \angl{windup}.
     %alebo sa to zbtočne nahromadí/začína sa zbytočne nahromaďovať (nemôže sa yačínať robiť sloveso v dokonavom vide...)
-    \item<2-> Akonáhle sa vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
-    \item<3-> To je saturácia integračnej zložky \angl{integral windup}.
+    \item<2-3> Akonáhle sa vrátia akčné zásahy pod ohraničenia, nahromadená I zložka stále bude tlačiť systém na hranice možností, musí sa to chvíľu ``uvoľňovať'' \angl{unwind} a tým pádom prestrelíme \angl{overshoot} žiadané hodnoty
+    \item<3> To je saturácia, resp nahromadenie integračnej zložky \angl{integral windup}.
     \item<4-> Môžeme používať rôzne triky, napr. ohraničiť veľkosť integračnej zložky, resp. vypnúť zložku pri určitých podmienkach.
   \end{itemize}
       \begin{onlyenv}<1-4>
@@ -139,28 +142,63 @@
 
 
 
-\begin{frame}[t]{Šum a kopnutie derivačnej zložky}
+\begin{frame}[t]{Šum a derivačná zložka}
   \begin{itemize}
-    \item<1-2> Šum zo snímačov môže propagovať cez výpočet odchýlky riadenia do derivačnej zložky Vysokofrekvenčné zložky potom navýšia D zložku (čo je derivácia impulzu?)
-    \item<2> Riešenie: Odchýlku riadenia pustíme cez dolnopriepustný \angl{low-pass} filter (LPF) --- Aj ArduCopter (20 Hz LPF) aj PX4 Autopilot používa \citep{AP:PID,PX4:PID}
-    \item<3-> Náhle zmeny spôsobia ``kopnutie'' riadenia \angl{derivative kick}. (čo je derivácia impulzu?)
-    \item<4-> Môžeme celkovo obísť zmenu žiadanej hodnoty a tým odchýlky  $e_\Theta(k)$ tak, že derivujeme výstup $y_\Theta(k)$\footnote{Riešenie v PX4, ArduCopter používa input shaping.}
+    \item<1-> Šum zo snímačov môže propagovať cez výpočet odchýlky riadenia do derivačnej zložky Vysokofrekvenčné zložky potom navýšia D zložku (čo je derivácia impulzu?)
+    \item<2-> Riešenie: Odchýlku riadenia pustíme cez dolnopriepustný \angl{low-pass} filter (LPF) 
+    \item<3->  Aj ArduCopter (20 Hz LPF) aj PX4 Autopilot používa \citep{AP:PID,PX4:PID}
   \end{itemize}
-      \begin{onlyenv}<1-2>
+
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate5}\\
 \end{figure}
+
+\end{frame}
+
+
+
+
+%
+%
+\begin{frame}[t]{Kopnutie derivačnej zložky: Tvarovanie}
+  \begin{itemize}
+  \item<1-> Dron je stabilizovaný, pilot/  ROS náhle chce $r_{\Phi}=$+30$^\circ$ klonenie. Čo sa stane s riadením?
+  \item<2->  Žiadaná hodnota je skokový signál. Derivácia skoku je... D zložka a tým aj vstup do akčných členov vystrelí!
+  \item<3->  Potrebujeme tvarovať vstupy do regulácie \angl{input shaping}, t.j. tvarovať žiadané hodnoty:
+        \begin{itemize}
+  \item Pomalšie vzorkovanie na rýchlejšie (interpolácia) \footnote{ArduCopter 50 Hz $\rightarrow$ 400 Hz \citep{AP:PID}}
+  \item Vyhladenie filtráciou, saturácie
+  \item<4-> Ak hovoríme o manuálnom pilotovaní, tvarovanie určuje aký ``pocit'' je riadiť stroj
+  \end{itemize}
+  \end{itemize}
+        \begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{InputShaping_1}\\
+\end{figure}
 \end{onlyenv}
 
-\begin{onlyenv}<3->
+
+        \begin{onlyenv}<3->
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{InputShaping_2}\\
+\end{figure}
+\end{onlyenv}
+\end{frame}
+%
+%
+\begin{frame}[t]{Kopnutie derivačnej zložky: Architektúra}
+  \begin{itemize}
+    \item<1-> Môžeme celkovo obísť zmenu žiadanej hodnoty a tým aj odchýlky  $e_\Theta(k)$ tak, že derivujeme výstup $y_\Theta(k)$
+    \item<2-> Riešenie preferuje PX4
+    \end{itemize}
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{ATT_Rate6}\\
 \end{figure}
-\end{onlyenv}
 \end{frame}
-
 
 
 \begin{frame}{Quad v MATLAB/Simulink}
@@ -168,10 +206,12 @@
 \item<1-> Skvelý príklad v MATLAB/Simulink na didaktické účely
 \item<2-> Vyvinuté na základe prednášok na low-level riadenie dronov MIT \citep{Riether2016}
 \item<3-> Nemá chutné vizualizácie, ale zase ľahšie zasahujete to riadenia (ako do ArduPilot, PX4 etc.)
+    \item<4-> Má aj simulačnú časť ale FW sa dá nahrať aj na komerčné drony\footnote{Parrot Rolling Spider, Parrot Mambo --- žiaľ sa už nevyrába}
+        
 \end{itemize}
   \begin{figure}
 \centering
-  \includegraphics[width=100mm]{MS_Visu}\\
+  \includegraphics[width=60mm]{MS_Visu}\\
 \end{figure}
 \end{frame}
 
@@ -239,6 +279,6 @@
 \end{onlyenv}
 
 
-\end{frame} 
+\end{frame}
 
 

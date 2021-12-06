@@ -26,8 +26,8 @@
 
 \begin{frame}{Opakovanie: Riadená sústava}
   \begin{itemize}
-    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, napr. motory drona
-    \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM do motorov
+    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, v tomto prípade celá kvadrikoptéra 
+    \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM/RC do motorov
     \item<3-> Výstup $y(t)$ \angl{output} je meraná, tzv. manipulovaná veličina \angl{manipulated variable}; napr. klopenie $\theta(t)$ drona
     \item<4-> Porucha \angl{disturbance} $w(t)$ je vplyv vonkajšieho prostredia, napr. vietor
   \end{itemize}
@@ -78,7 +78,7 @@
 \begin{frame}[t]{Opakovanie: Riadiaci algoritmus}
   \begin{itemize}
     \item<1-> Riadenie je logika ktorá prepočíta odchýlku riadenia $e(t)$ na vstupy $u(t)$
-    \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. parné stroje)
+    \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. riadenie rýchlosti parného stroja)
     \item<3-> Dobrým kompromisom medzi komplexnosťou (pochopenie, návrh) a implementovateľnosťou je PID riadenie
     \item<4-> Až 97\% riadiacich algoritmov v praxi sú PID... \citep{Murray2004}
     \item<5-> ...a väčšina z nich sú slabo naladené.
@@ -119,21 +119,21 @@
 \begin{onlyenv}<1>
 \begin{figure}
 \centering
-  \includegraphics[width=60mm]{PID_P}\\
+  \includegraphics[width=50mm]{PID_P}\\
 \end{figure}
 \end{onlyenv}
 
 \begin{onlyenv}<2>
 \begin{figure}
 \centering
-  \includegraphics[width=60mm]{PID_I}\\
+  \includegraphics[width=50mm]{PID_I}\\
 \end{figure}
 \end{onlyenv}
 
 \begin{onlyenv}<3>
 \begin{figure}
 \centering
-  \includegraphics[width=60mm]{PID_D}\\
+  \includegraphics[width=50mm]{PID_D}\\
 \end{figure}
 \end{onlyenv}
 
@@ -146,7 +146,7 @@ u(t)= K_Pe(t)+K_I\int_0^te(t)\mathrm{d}t+K_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}
 \end{onlyenv}
 
 \begin{onlyenv}<5>
-alebo tzv. štandardná forma\footnote{V PX4 môžete prepínať pre rate controller \cite{PX4:PIDTuning}} (máme intuitívnejšie časové konštanty, ale zosilnenie je viazané)
+alebo tzv. štandardná forma\footnote{V PX4 môžete prepínať pre rate controller \cite{PX4:PIDTuning}} (máme intuitívnejšie časové konštanty, ale zosilnenie je nezávislé\footnote{pozor, neintutívne...})
 \begin{align}
 u(t)= K_P\left(e(t)+\frac{1}{T_I}\int_0^te(t)\mathrm{d}t+T_D\frac{\mathrm{d}e(t)}{\mathrm{d}t}\right)
 \end{align}
@@ -171,20 +171,20 @@ u(t)= K_P\left(e(t)+\frac{1}{T_I}\int_0^te(t)\mathrm{d}t+T_D\frac{\mathrm{d}e(t)
 \end{itemize}
 \begin{figure}
 \centering
-  \includegraphics[width=\textwidth]{loop_Sampling}\\
+  \includegraphics[width=0.9\textwidth]{loop_Sampling}\\
 \end{figure}
 \end{frame}
 
 
-\begin{frame}[t]{Opakovanie: Vzorkovanie, tvarovanie 2}
+\begin{frame}[t]{Opakovanie: Číslicové PID}
   \begin{itemize}
-    \item<1-> Systém, resp. proces zostáva väčšinou spojitý
+    \item<1-> Systém, resp. proces zostáva spojitý\footnote{Samozrejme máme aj nespojité procesy a systémy}
     \item<2-> Koncepty ako integrácia, derivácia musíme numericky aproximovať, t.j. ak $T_s$ je vzorkovací čas, naše PID bude
         \begin{align}
         u(k)= K_Pe(k)+K_I\underbrace{\sum_0^te(k)T_s}_{\mathrm{``obdlzniky''}}+K_D\underbrace{\frac{e(k)-e(k-1)}{T_s}}_{\mathrm{``vstupanie''}}
         \end{align}
     \item<3->  alebo v prakticky vhodnejšej tzv. inkrementálnej forme pre MCU (bez dôkazu, viď. \cite{W:PID})
-        {\tiny
+        {\scriptsize
         \begin{align}
         u(k)=u(k-1)+\left(K_P+K_IT_s+\frac{K_D}{T_s}\right)e(k)+\left(-K_P -2\frac{K_D}{T_s}\right)e(k-1)+\frac{K_D}{T_s}e(k-2)
          \end{align}
