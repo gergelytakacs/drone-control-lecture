@@ -19,21 +19,44 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{BenAri2017}{misc}{}
+    \entry{AP:PIDDOC}{misc}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=6ef658997b5c3939d8ae52c650791c80}{%
-           family={Ben-Ari},
-           familyi={B\bibinithyphendelim A\bibinitperiod},
-           given={Moti},
-           giveni={M\bibinitperiod},
+        {{un=0,uniquepart=base,hash=1f79341042063f30812f2942a48d19ed}{%
+           family={{ArduPilot}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{fullhash}{1f79341042063f30812f2942a48d19ed}
+      \strng{bibnamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authorbibnamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authornamehash}{1f79341042063f30812f2942a48d19ed}
+      \strng{authorfullhash}{1f79341042063f30812f2942a48d19ed}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Online}
+      \field{note}{[cited 29.11.2021]; Available from \url{https://ardupilot.org/dev/docs/apmcopter-programming-attitude-control-2.html}}
+      \field{title}{{Copter Attitude Control}}
+      \field{year}{2021}
+    \endentry
+    \entry{Boland2015}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b78f2896f0d5ca5e22e14c0900e7d46c}{%
+           family={Boland},
+           familyi={B\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{6ef658997b5c3939d8ae52c650791c80}
-      \strng{fullhash}{6ef658997b5c3939d8ae52c650791c80}
-      \strng{bibnamehash}{6ef658997b5c3939d8ae52c650791c80}
-      \strng{authorbibnamehash}{6ef658997b5c3939d8ae52c650791c80}
-      \strng{authornamehash}{6ef658997b5c3939d8ae52c650791c80}
-      \strng{authorfullhash}{6ef658997b5c3939d8ae52c650791c80}
+      \strng{namehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{fullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{bibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authorbibnamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authornamehash}{b78f2896f0d5ca5e22e14c0900e7d46c}
+      \strng{authorfullhash}{b78f2896f0d5ca5e22e14c0900e7d46c}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -41,9 +64,9 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Online}
-      \field{note}{Version 2.0.1 [cited 5.12.2021]; Available from \url{https://www.weizmann.ac.il/sci-tea/benari/sites/sci-tea.benari/files/uploads/softwareAndLearningMaterials/quaternion-tutorial-2-0-1.pdf}}
-      \field{title}{A Tutorial on Euler Angles and Quaternions}
-      \field{year}{2017}
+      \field{note}{[cited 2.12.2021]; Available from \url{https://www.youtube.com/watch?v=CHSYgLfhwUo&t=3s}}
+      \field{title}{Embedded Programming for Quadcopters}
+      \field{year}{2015}
     \endentry
     \entry{Erasmus2020}{misc}{}
       \name{author}{1}{}{%
@@ -97,31 +120,28 @@
       \field{title}{{Pratical PID implementation and the new Position Controller}}
       \field{year}{2018}
     \endentry
-    \entry{Saha2020}{misc}{}
+    \entry{PX4:PID}{misc}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}{%
-           family={Saha},
-           familyi={S\bibinitperiod},
-           given={Dola},
-           giveni={D\bibinitperiod},
-           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8e447a2840db6a861298c4101f122d23}{%
+           family={{PX4 Autopilot}},
+           familyi={P\bibinitperiod}}}%
       }
-      \strng{namehash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \strng{fullhash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \strng{bibnamehash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \strng{authorbibnamehash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \strng{authornamehash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \strng{authorfullhash}{5cbdf7408bb7b80cb2e8a9bf0d8e8a6d}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \strng{namehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{fullhash}{8e447a2840db6a861298c4101f122d23}
+      \strng{bibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorbibnamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authornamehash}{8e447a2840db6a861298c4101f122d23}
+      \strng{authorfullhash}{8e447a2840db6a861298c4101f122d23}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Online}
-      \field{note}{2020 Fall ECE553 Resources [cited 3.12.2021]; Available from \url{https://www.albany.edu/faculty/dsaha/teach/2020Fall_ECE553/}}
-      \field{title}{Precise Unmanned Aerial Vehicle (UAV) Flight Control}
-      \field{year}{2020}
+      \field{note}{[cited 29.11.2021]; Available from \url{https://docs.px4.io/master/en/flight_stack/controller_diagrams.html}}
+      \field{title}{{Controller Diagrams --- Multicopter Control Architecture}}
+      \field{year}{2021}
     \endentry
   \enddatalist
 \endrefsection
