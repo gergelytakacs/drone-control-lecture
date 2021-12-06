@@ -53,22 +53,26 @@
   \item<1-> \textbf{Výhody:} Jednoduché
   \item<2-> \textbf{Nevýhody:} tlačí to quad na hranu stability, určite nebude ``optimálne'' pre všetky prípady a od 1942 máme lepšie metódy. Nastavené na maximálne odstránenie porúch, náchylné na agresívne riadenie s prestrelom \cite{Bequette2010}
      \item<3-> Môžeme podobné experimentálne dáta získať aj zo skokovej odozvy
-  \item<4-> ArduPilot (ArduCopter) --- ``AutoTuning'' Napodobňuje túto heuristiku (ale nie je to ZN) \citep{AP:LogSeminar}
+     \item<4-> Iné podobné metódy
+     \begin{itemize}
+         \item Cohen Coon je založené na ZN, pridá aj oneskorenie sústavy \citep{Joseph2018} (nie je typicky problém pri quadoch)
+        \item Chien, Hrones a Reswickova (CHR) metóda, taktiež založené na ZN. Vyladené na maximalizáciu rýchlosti odozvy bez prestrelu (alebo 20\%) \citep{Hambali2014}.
+     \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Ako to funguje reálne}
+\begin{itemize}
+  \item<1-> ArduPilot (ArduCopter) --- ``AutoTuning'' Napodobňuje heuristiku (ale určite nie je to ZN) \citep{AP:LogSeminar}
   \begin{itemize}
   \item Zvyšuje P parameter pomaly
   \item Akonáhle deteguje osciláciu, zníži P parameter
   \item Opakuje pre iné zložky/slučky
 \end{itemize}
+\item<2-> AP (AC) má tam iné pseudoheuristické triky\footnote{...alebo tzv. Bulharské konštanty}. Ako na $K_I/T_I$?    
+\item<3->Napríklad pre $\Theta$ a $\Phi$ máme $K_I=K_P$\footnote{``its pleasing to the user'' \citep{Hall2020}} a pre $\Psi$ berie $K_I=1/10K_P$; alebo určuje časové konštanty na základe vzorkovania vyšších slučiek
+\item<4-> Niektoré slučky nie sú súčasťou autotune funkcionality, iné zase obsahujú pevne dané parametre ktoré potenciálne by mohli byť súčasťou takejto logiky \citep{Hall2020}
 \item<5-> PX4 dlho nemal vstavanú ``autotune'' funkciu \citep{Bolton2018}, momentálne využíva na odhad SISO linearizovaný model 2. rádu  (bez prepojenia medzi osami) \citep{PX4:PIDTuning}
 \end{itemize}
-
 \end{frame}
 
-
-\begin{frame}[t]{Nastavenie parametrov}
-\begin{itemize}
-  \item<1-> Cohen Coon je založené na ZN, pridá aj oneskorenie sústavy \citep{Joseph2018} (nie je typicky problém pri quadoch)
-  \item<2-> Chien, Hrones a Reswickova (CHR) metóda, taktiež založené na ZN. Vyladené na maximalizáciu rýchlosti odozvy bez prestrelu (alebo 20\%) \citep{Hambali2014}.
-
-\end{itemize}
-\end{frame} 

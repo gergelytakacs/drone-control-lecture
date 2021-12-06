@@ -26,7 +26,7 @@
 
 \begin{frame}{Opakovanie: Riadená sústava}
   \begin{itemize}
-    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, v tomto prípade celá kvadrikoptéra 
+    \item<1-> Riadená sústava, systém alebo proces \angl{plant, system, process}, v tomto prípade celá kvadrikoptéra
     \item<2-> Vstup $u(t)$ \angl{input} sú akčné zásahy, napr. PWM/RC do motorov
     \item<3-> Výstup $y(t)$ \angl{output} je meraná, tzv. manipulovaná veličina \angl{manipulated variable}; napr. klopenie $\theta(t)$ drona
     \item<4-> Porucha \angl{disturbance} $w(t)$ je vplyv vonkajšieho prostredia, napr. vietor
@@ -81,20 +81,20 @@
     \item<2-> Môže to byť ľubovoľné, do konca aj analógové a mechanické (e.g. riadenie rýchlosti parného stroja)
     \item<3-> Dobrým kompromisom medzi komplexnosťou (pochopenie, návrh) a implementovateľnosťou je PID riadenie
     \item<4-> Až 97\% riadiacich algoritmov v praxi sú PID... \citep{Murray2004}
-    \item<5-> ...a väčšina z nich sú slabo naladené.
+    \item<5-> ...a väčšina z nich sú slabo naladené\footnote{ArduPilot: ``most heli users have not learned how to tune up their helis yet'' \citep{Hall2020}}
   \end{itemize}
 
 \begin{onlyenv}<1>
 \begin{figure}
 \centering
-  \includegraphics[width=100mm]{loop_all}\\
+  \includegraphics[width=80mm]{loop_all}\\
 \end{figure}
 \end{onlyenv}
 
 \begin{onlyenv}<2>
 \begin{figure}
 \centering
-  \includegraphics[width=100mm]{loop_Whatevs}\\
+  \includegraphics[width=80mm]{loop_Whatevs}\\
 \end{figure}
 \end{onlyenv}
 
@@ -103,7 +103,7 @@
 \begin{onlyenv}<3->
 \begin{figure}
 \centering
-  \includegraphics[width=100mm]{loop_PID}\\
+  \includegraphics[width=80mm]{loop_PID}\\
 \end{figure}
 \end{onlyenv}
 \end{frame}

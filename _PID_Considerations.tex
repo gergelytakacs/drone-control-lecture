@@ -12,3 +12,38 @@
 
 \end{itemize}
 \end{frame} 
+
+
+%\begin{frame}
+%Notes: \cite{AP:PID}
+%User (ROS) $\rightarrow$ Shaping $\rightarrow$ PID $\rightarrow$ Actuators
+%Yaw je prioritizovanych nad Pitch Roll, lebo to drzi dron v lufte \citep{Erasmus2020}
+%50 Hz -> 400 Hz
+%Min 24 tazsie uchopytelne koncepty pre prezentaciu, dava menej konkretnosti
+%Velocity prioritizuje vertikalnu rychlost   \citep{Erasmus2020}
+%\end{frame}
+
+%\begin{frame}[t]{Others}
+%\begin{itemize}
+%  \item<1-> Gain scheduling pre Heli\citep{Hall2020}
+%\end{itemize}
+%
+%Actuator output proportional then FF is good
+%Copter doesnt have FF in rate
+%Dynamic Notch filter na zavislosti od RPM propellerov (vibracie vs. snimace). Rozmyslaju aj realtime FFT
+%Akrobatika - pri otacani vypne Yaw a sustredi na trhust vector (ked sme hore nohami, naco riesit yaw)
+%System Identification Mode - Chirp inject v AP, dev dufa ze univerzity sa pripoja!
+%
+%Yaw je rychlejsie ako Pitch a Roll, preto Yaw slucka ma LP pre cely PID nielen D
+%Trigonometric S-Curve spline pre polohovanie/posunutie - vyhladenie reakcie na sledovanie WP v rohu - je to čiastočne aj o tom, aby to vyzeralo dobre a zvýšil istotu riadenia\footnote{inspire confidence...} oz strany uživateľa. Odsráni náhle zmeny, tzv. trhanie \angl{twitch} cez zmenu profilu derivácie lineárneho zrýchlenia - trhania \angl{jerk}\footnote{dvojitá derivácia zrýchlenia je \angl{snap} alebo \angl{jounce}}.
+%\end{itemize}
+%\end{frame} 
+
+% Model-based ladenie!
+
+
+%Other interesting ones
+%https://www.youtube.com/watch?v=4hlQ2pf842U
+%https://www.youtube.com/watch?v=iS5JFuopQsA
+%https://www.youtube.com/watch?v=7F9cG64kRxI
+%https://www.youtube.com/watch?v=fpJZSQmqDVk

@@ -22,7 +22,7 @@
 \end{figure}
   \end{frame}
 
- 
+
 \begin{frame}[t]{Rýchlosť zmeny uhlov (pokr.)}
 \begin{itemize}
   \item<1-> Slučky sú nezávislé len pre malé uhly, lebo keď zvýšime letovú výšku $h$ pri väčších e.g. $\Theta$ tak zvýšime aj vertikálnu aj horizontálnu rýchlosť \citep{Douglas2018}!
@@ -145,7 +145,7 @@
 \begin{frame}[t]{Šum a derivačná zložka}
   \begin{itemize}
     \item<1-> Šum zo snímačov môže propagovať cez výpočet odchýlky riadenia do derivačnej zložky Vysokofrekvenčné zložky potom navýšia D zložku (čo je derivácia impulzu?)
-    \item<2-> Riešenie: Odchýlku riadenia pustíme cez dolnopriepustný \angl{low-pass} filter (LPF) 
+    \item<2-> Riešenie: Odchýlku riadenia pustíme cez dolnopriepustný \angl{low-pass} filter (LPF)
     \item<3->  Aj ArduCopter (20 Hz LPF) aj PX4 Autopilot používa \citep{AP:PID,PX4:PID}
   \end{itemize}
 
@@ -207,7 +207,7 @@
 \item<2-> Vyvinuté na základe prednášok na low-level riadenie dronov MIT \citep{Riether2016}
 \item<3-> Nemá chutné vizualizácie, ale zase ľahšie zasahujete to riadenia (ako do ArduPilot, PX4 etc.)
     \item<4-> Má aj simulačnú časť ale FW sa dá nahrať aj na komerčné drony\footnote{Parrot Rolling Spider, Parrot Mambo --- žiaľ sa už nevyrába}
-        
+
 \end{itemize}
   \begin{figure}
 \centering
@@ -278,6 +278,12 @@
 \end{figure}
 \end{onlyenv}
 
+\begin{onlyenv}<3>
+  \begin{figure}
+\centering
+  \includegraphics[width=100mm]{AP_Rate_New}\\
+\end{figure}
+\end{onlyenv}
 
 \end{frame}
 

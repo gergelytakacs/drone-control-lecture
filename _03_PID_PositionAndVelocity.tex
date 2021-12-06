@@ -2,7 +2,7 @@
 
   \begin{frame}[t]{Referencia na základe globálnej polohy}
 \begin{itemize}
-  \item<1-> Úlohou je držať polohu na základe globálnych súradníc (GS) napr. GPS. Pri minimalistickom prevedení (po zmene súradníc!) môžeme priamo premeniť polohu na uhol
+  \item<1-> Úlohou je držať polohu (t.j. posuv) základe globálnych súradníc (GS) napr. GPS. Pri minimalistickom prevedení (po zmene súradníc!) môžeme priamo premeniť polohu na uhol
   \item<2-> Ako by vyzeral náš kaskádovaný riadiaci systém?
   \item<3-> Môže to tak priamo fungovať?
 \end{itemize}
@@ -32,7 +32,7 @@
 
  \begin{frame}[t]{Zmena súradníc}
 \begin{itemize}
-  \item<1-> Aj pri priamom riadení polohy musíme zmeniť súradnice
+  \item<1-> Aj pri priamom riadení polohy/posuvu musíme zmeniť súradnice
   \item<2-> Klopenie a klonenie určíme na základe GS súradníc, t.j. premeníme $X,Y\rightarrow\Theta,\Phi$...
   \item<3->  ...   ale potrebujeme na výpočet aj želané/aktuálne vybočenie, t.j. $X,Y,\Psi\rightarrow\Theta,\Phi$,
 \end{itemize}
@@ -87,7 +87,7 @@
 
  \begin{frame}[t]{Zmena súradníc 3}
 \begin{itemize}
-  \item<1-> ArduCopter využíval DCM až do v. 3.2.  
+  \item<1-> ArduCopter využíval DCM až do v. 3.2.
    \item<2-> Pri 3D reprezentácii DCM sa začínajú komplikovať, a obsahujú singularity \citep{BenAri2017}
    \item<3-> Riešenie: reprezentácia Eulerových uhlov cez kvaternióny \angl{quaternion} ktoré odstránia problém so singularitou a sú výpočtovo efektívnejšie \citep{BenAri2017}
        \item<4-> V súčasných verziách aj ArduCopter aj PX4 využíva kvaternióny
@@ -162,7 +162,7 @@
   \end{frame}
 
 
-  
+
    \begin{frame}[t]{Nepriame riadenie polohy: Polohová slučka}
 \begin{itemize}
   \item<1-> Potrebujeme ešte jednu slučku --- polohovú, ktorá premení polohu na rýchlosť
@@ -170,7 +170,7 @@
   \item<2-> Väčšinou je to P riadenie, ako aj pri ArduCopter, PX4 a inde (c.f. \cite{Saha2020}).
 \end{itemize}
 
-  \begin{onlyenv}<1->
+  \begin{onlyenv}<1>
   \begin{figure}
 \centering
   \includegraphics[width=\textwidth]{PID_HighLevel4}\\
@@ -178,14 +178,24 @@
 \end{onlyenv}
 
 
-  \begin{onlyenv}<2->
+
+  \begin{onlyenv}<2>
   \begin{figure}
 \centering
   \includegraphics[width=50mm]{PX4_Position}\\
 \end{figure}
 \end{onlyenv}
+
+  \begin{onlyenv}<2>
+  \begin{figure}
+\centering
+  \includegraphics[width=50mm]{AP_Position_New}\\
+\end{figure}
+\end{onlyenv}
+
+
   \end{frame}
-  
+
  \begin{frame}[t]{Celková riadiaca architektúra}
   \begin{onlyenv}<1>
   \begin{figure}
@@ -201,9 +211,17 @@
 \end{figure}
 \end{onlyenv}
 
+
+  \begin{onlyenv}<3>
+  \begin{figure}
+\centering
+  \includegraphics[width=\textwidth]{AP_Overall}\\
+\end{figure}
+\end{onlyenv}
+
   \end{frame}
-  
-  
+
+
 
 \begin{frame}{Je dokonalé sledovanie trasy vôbec možné?}
 \begin{itemize}
