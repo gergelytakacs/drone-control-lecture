@@ -10,4 +10,4 @@
 *.toc
 *.xml
 *.vrb
-
+*.synctex(busy)
